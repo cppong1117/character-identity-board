@@ -133,8 +133,8 @@ def assign_characters(conn, clusters):
     for cid, tids in sorted(clusters.items()):
         code = f"CL{cid:02d}"
         if code not in existing:
-            cur.execute('''INSERT INTO characters (project_id, display_name, character_code)
-                VALUES (15, ?, ?)''', (f"Cluster {cid:02d}", code))
+            cur.execute('''INSERT INTO characters (project_id, display_name, character_code, status, created_by)
+                VALUES (15, ?, ?, 'automatic', 'clustering_v2')''', (f"Cluster {cid:02d}", code))
             created += 1
         
         # Get character ID
