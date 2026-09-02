@@ -1,0 +1,10 @@
+{
+  "n_clusters": 9,
+  "n_noise": 892,
+  "n_assigned": 640,
+  "intra_cluster_mean": 0.4638219143603821,
+  "intra_cluster_median": 0.4725790908748494,
+  "inter_cluster_mean": 0.10008865026511435,
+  "inter_cluster_median": 0.09307225541619862,
+  "separation": 0.36373326409526774
+}

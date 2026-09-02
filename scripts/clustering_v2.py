@@ -125,7 +125,7 @@ def assign_characters(conn, clusters):
     cur = conn.cursor()
     
     # Get existing characters
-    cur.execute("SELECT id, name, character_code FROM characters WHERE project_id = 15")
+    cur.execute("SELECT id, display_name, character_code FROM characters WHERE project_id = 15")
     existing = {row[2]: row for row in cur.fetchall()}
     
     # Create new characters for each cluster
@@ -133,17 +133,19 @@ def assign_characters(conn, clusters):
     for cid, tids in sorted(clusters.items()):
         code = f"CL{cid:02d}"
         if code not in existing:
-            cur.execute('''INSERT INTO characters (project_id, name, character_code, reference_embedding, reference_embedding_dim)
-                VALUES (15, ?, ?, NULL, NULL)''', (f"Cluster {cid:02d}", code))
+            cur.execute('''INSERT INTO characters (project_id, display_name, character_code)
+                VALUES (15, ?, ?)''', (f"Cluster {cid:02d}", code))
             created += 1
         
         # Get character ID
         cur.execute("SELECT id FROM characters WHERE character_code = ? AND project_id = 15", (code,))
         char_id = cur.fetchone()[0]
         
-        # Assign tracklets
+        # Assign tracklets via identity_assignments
         for tid in tids:
-            cur.execute("UPDATE tracklets SET character_id = ?, review_status = 'auto_assigned' WHERE id = ?", (char_id, tid))
+            cur.execute('''INSERT OR REPLACE INTO identity_assignments 
+                (tracklet_id, character_id, confidence, assignment_source, review_status)
+                VALUES (?, ?, 0.95, 'clustering_v2', 'auto_assigned')''', (tid, char_id))
     
     conn.commit()
     print(f"Created {created} new characters, assigned tracklets")

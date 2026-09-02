@@ -21,10 +21,11 @@ def load_tracklet_representatives(conn, project_id=15):
     """Load tracklet prototype embeddings for cross-tracklet comparison."""
     cur = conn.cursor()
     
-    # Get tracklets with their character assignments
-    cur.execute('''SELECT t.id, t.character_id, t.shot_id, c.name, c.character_code
+    # Get tracklets with their character assignments (via identity_assignments)
+    cur.execute('''SELECT t.id, ia.character_id, t.shot_id, c.display_name, c.character_code
         FROM tracklets t
-        LEFT JOIN characters c ON t.character_id = c.id
+        LEFT JOIN identity_assignments ia ON ia.tracklet_id = t.id
+        LEFT JOIN characters c ON ia.character_id = c.id
         WHERE t.shot_id IN (SELECT id FROM shots WHERE video_id = ?)''', (project_id,))
     tracklet_info = {row[0]: {'character_id': row[1], 'shot_id': row[2], 'name': row[3], 'code': row[4]}
                      for row in cur.fetchall()}

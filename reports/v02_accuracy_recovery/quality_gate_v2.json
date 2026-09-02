@@ -1,0 +1,9 @@
+{
+  "total": 112659,
+  "ok": 91753,
+  "rejected": 20906,
+  "reasons": {
+    "LOW_DETECTOR_CONFIDENCE": 19328,
+    "BLUR_TOO_HIGH": 4123
+  }
+}
