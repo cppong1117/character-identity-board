@@ -16,13 +16,20 @@ import numpy as np
 
 from .config import settings
 from .face_engine import FaceEngine
+from .face_engine_arcface import FaceEngineArcFace
 from .quality import compute_quality
 from .tracking import ShotTracker
 
 log = logging.getLogger(__name__)
 
-# default body/person detect: reuse face bbox expanded to head-shoulders + body
-# (V0.1 uses face-first person association; no separate person model needed.)
+# Select face engine based on config
+USE_ARCFACE = getattr(settings, 'use_arcface', False)
+
+def get_face_engine():
+    """Get the configured face engine (ArcFace or SFace)."""
+    if USE_ARCFACE:
+        return FaceEngineArcFace()
+    return FaceEngine()
 
 
 def _expand_bbox(bbox, frame_w, frame_h, scale=2.6):
