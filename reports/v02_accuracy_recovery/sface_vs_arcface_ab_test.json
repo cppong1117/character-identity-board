@@ -1,0 +1,28 @@
+{
+  "sface": {
+    "same_mean": 0.8312632957814882,
+    "same_median": 0.9999980926513672,
+    "diff_mean": 0.8703813970088958,
+    "diff_median": 0.9999980926513672,
+    "separation": -0.039118101227407664,
+    "best_threshold": 0.1,
+    "best_f1": 0.6896962477665277,
+    "best_precision": 0.5366079703429101,
+    "best_recall": 0.965,
+    "same_count": 600,
+    "diff_count": 500
+  },
+  "arcface": {
+    "same_mean": 0.8882310063576114,
+    "same_median": 0.9693777561187744,
+    "diff_mean": 0.6148600806295872,
+    "diff_median": 0.980710506439209,
+    "separation": 0.27337092572802424,
+    "best_threshold": 0.1,
+    "best_f1": 0.7347972972972973,
+    "best_precision": 0.5918367346938775,
+    "best_recall": 0.9688195991091314,
+    "same_count": 449,
+    "diff_count": 500
+  }
+}

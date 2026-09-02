@@ -1,0 +1,83 @@
+Loading embeddings...
+Loaded 57599 embeddings from 12 characters
+
+Characters:
+  SMY: 25661 faces
+  DOCTOR: 13104 faces
+  lw: 8111 faces
+  mbq: 4455 faces
+  ZY: 4289 faces
+  Person A_Test: 600 faces
+  Character A: 300 faces
+  Character A: 300 faces
+  Cluster 01: 300 faces
+  Cluster 02: 300 faces
+
+Generating pairs...
+Same-person pairs: 600
+Different-person pairs: 500
+
+=== Testing SFace (existing embeddings) ===
+Same-person mean: 0.8313
+Different-person mean: 0.8704
+Separation: -0.0391
+Best F1: 0.6897 @ threshold=0.10
+Best Precision: 0.5366, Recall: 0.9650
+
+=== Testing ArcFace R100 (buffalo_l) ===
+Loading ArcFace model...
+Applied providers: ['CPUExecutionProvider'], with options: {'CPUExecutionProvider': {}}
+find model: /home/ponky_re6000/.insightface/models/buffalo_l/1k3d68.onnx landmark_3d_68 ['None', 3, 192, 192] 0.0 1.0
+Applied providers: ['CPUExecutionProvider'], with options: {'CPUExecutionProvider': {}}
+find model: /home/ponky_re6000/.insightface/models/buffalo_l/2d106det.onnx landmark_2d_106 ['None', 3, 192, 192] 0.0 1.0
+Applied providers: ['CPUExecutionProvider'], with options: {'CPUExecutionProvider': {}}
+find model: /home/ponky_re6000/.insightface/models/buffalo_l/det_10g.onnx detection [1, 3, '?', '?'] 127.5 128.0
+Applied providers: ['CPUExecutionProvider'], with options: {'CPUExecutionProvider': {}}
+find model: /home/ponky_re6000/.insightface/models/buffalo_l/genderage.onnx genderage ['None', 3, 96, 96] 0.0 1.0
+Applied providers: ['CPUExecutionProvider'], with options: {'CPUExecutionProvider': {}}
+find model: /home/ponky_re6000/.insightface/models/buffalo_l/w600k_r50.onnx recognition ['None', 3, 112, 112] 127.5 127.5
+set det-size: [(128, 128), (640, 640)]
+Model loaded!
+  Processing same pairs: 0/600
+/home/ponky_re6000/character-identity-board/.venv/lib/python3.12/site-packages/insightface/utils/face_align.py:23: FutureWarning: `estimate` is deprecated since version 0.26 and will be removed in version 2.2. Please use `SimilarityTransform.from_estimate` class constructor instead.
+  tform.estimate(lmk, dst)
+  Processing same pairs: 50/600
+  Processing same pairs: 100/600
+  Processing same pairs: 150/600
+  Processing same pairs: 200/600
+  Processing same pairs: 250/600
+  Processing same pairs: 300/600
+  Processing same pairs: 350/600
+  Processing same pairs: 400/600
+  Processing same pairs: 450/600
+  Processing same pairs: 500/600
+  Processing same pairs: 550/600
+  Processing diff pairs: 0/500
+  Processing diff pairs: 50/500
+  Processing diff pairs: 100/500
+  Processing diff pairs: 150/500
+  Processing diff pairs: 200/500
+  Processing diff pairs: 250/500
+  Processing diff pairs: 300/500
+  Processing diff pairs: 350/500
+  Processing diff pairs: 400/500
+  Processing diff pairs: 450/500
+
+Same-person mean: 0.8882
+Different-person mean: 0.6149
+Separation: 0.2734
+Best F1: 0.7348 @ threshold=0.10
+Best Precision: 0.5918, Recall: 0.9688
+
+Results saved to /home/ponky_re6000/character-identity-board/reports/v02_accuracy_recovery/sface_vs_arcface_ab_test.json
+
+============================================================
+COMPARISON: SFace vs ArcFace R100
+============================================================
+Metric                           SFace      ArcFace  Improvement
+------------------------------------------------------------
+Same-person mean                0.8313       0.8882        1.07x
+Diff-person mean                0.8704       0.6149        0.71x
+Separation                     -0.0391       0.2734       -6.99x
+Best F1                         0.6897       0.7348        1.07x
+Best Precision                  0.5366       0.5918        1.10x
