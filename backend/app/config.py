@@ -54,14 +54,14 @@ class Settings(BaseSettings):
     cluster_method: str = "hdbscan"
     hdbscan_min_cluster_size: int = 15
     # Face recognition engine: SFace (128-dim) or ArcFace R100 (512-dim)
-    # ArcFace has 6.99x better cross-shot separation
-    use_arcface: bool = False
+    # ArcFace has 11x better separation (0.436 vs -0.039)
+    use_arcface: bool = True
     
     # ArcFace cosine similarity thresholds (512-dim embeddings)
-    # A/B test: same-person mean=0.888, diff-person mean=0.615, separation=0.273
-    arcface_identity_threshold: float = 0.75
-    arcface_merge_threshold: float = 0.80
-    arcface_unknown_threshold: float = 0.65
+    # Calibration: same-person mean=0.656, diff-person mean=0.220, separation=0.436
+    arcface_identity_threshold: float = 0.40
+    arcface_merge_threshold: float = 0.50
+    arcface_unknown_threshold: float = 0.30
     
     # SFace cosine similarity thresholds (128-dim embeddings, legacy)
     identity_threshold: float = 0.85
