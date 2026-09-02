@@ -258,6 +258,10 @@ async function getChars() {
   return cachedChars;
 }
 
+// ═══════════════════════════════════════════════════════
+// REVIEW QUEUE — Batch selection + optimistic updates
+// ═══════════════════════════════════════════════════════
+
 async function loadReviewQueue(projectId) {
   cachedChars = null; // refresh
   const container = document.getElementById('review-container');
@@ -268,54 +272,310 @@ async function loadReviewQueue(projectId) {
       container.innerHTML = `<div class="empty-state"><div class="empty-state-text">Review queue is empty 🎉</div></div>`;
       return;
     }
-    // Add batch action bar
-    const batchBar = `
-      <div style="display:flex;gap:10px;margin-bottom:16px;align-items:center;flex-wrap:wrap">
-        <span style="font-size:13px;color:var(--text-secondary)">${items.length} items pending review</span>
-        <button class="btn btn-success btn-sm" onclick="batchConfirm()">✓ Confirm All High-Conf (≥0.90)</button>
-        <button class="btn btn-ghost btn-sm" onclick="batchExcludeLow()">✗ Exclude Low-Conf (&lt;0.70)</button>
-      </div>`;
-
-    container.innerHTML = batchBar + items.map(r => {
-      const cropUrl = r.face_crop_path
-        ? `/media/${r.face_crop_path.replace(/^.*?character-identity-board-data\/projects\//, '')}`
-        : '';
-      const reasons = (r.reasons || []).map(reason =>
-        `<span class="review-reason">${esc(reason)}</span>`
-      ).join(' ');
-      return `
-        <div class="review-card ${r.review_status}">
-          ${cropUrl ? `<img class="review-crop" src="${cropUrl}" alt="face" loading="lazy" onerror="this.style.display='none'">` :
-            `<div class="review-crop" style="display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px">N/A</div>`}
-          <div class="review-info">
-            <div class="review-shot">Shot #${r.shot_number} · ${r.timecode_start}</div>
-            <div class="review-character">${esc(r.character_name)} <span style="color:var(--text-muted);font-weight:400">(${esc(r.character_code)})</span></div>
-            <div class="review-details">
-              <span>confidence: <strong>${(r.identity_confidence || 0).toFixed(3)}</strong></span>
-              <span>quality: <strong>${(r.quality_score || 0).toFixed(3)}</strong></span>
-              <span>source: ${esc(r.assignment_source)}</span>
-              ${reasons}
-            </div>
-          </div>
-          <div class="review-actions">
-            ${r.review_status === 'pending' ? `
-              <select class="review-char-select" id="char-select-${r.tracklet_id}" style="
-                background:var(--card);color:var(--foreground);border:1px solid var(--border);
-                border-radius:4px;padding:4px 6px;font-size:12px;max-width:140px;
-              ">
-                <option value="">-- 选择人物 --</option>
-              </select>
-              <button class="btn btn-success btn-sm" onclick="confirmWithChar(${r.tracklet_id})">✓ 确认</button>
-              <button class="btn btn-ghost btn-sm" onclick="markUnknown(${r.tracklet_id})">Unknown</button>
-              <button class="btn btn-sm" style="background:var(--red);color:white" onclick="excludeNotFace(${r.tracklet_id})">✗ Not a face</button>
-            ` : `<span style="font-size:11px;color:var(--green)">✓ Confirmed</span>`}
-          </div>
-        </div>`;
-    }).join('');
-    // Populate character dropdowns after rendering
-    populateCharDropdowns();
+    renderReviewQueue(items);
   } catch (e) {
     container.innerHTML = `<div class="empty-state"><div class="empty-state-text">Error: ${esc(e.message)}</div></div>`;
+  }
+}
+
+function renderReviewQueue(items) {
+  const container = document.getElementById('review-container');
+
+  const batchBar = `
+    <div id="review-batch-bar" style="display:flex;gap:10px;margin-bottom:16px;align-items:center;flex-wrap:wrap">
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;color:var(--text-secondary)">
+        <input type="checkbox" id="review-select-all" onchange="toggleSelectAll(this)" style="width:18px;height:18px;cursor:pointer">
+        全选 (<span id="review-selected-count">0</span>/${items.length})
+      </label>
+      <button class="btn btn-sm" style="background:#ef4444;color:white" onclick="batchNotAFace()">✗ Not a face (批量)</button>
+      <button class="btn btn-success btn-sm" onclick="batchConfirm()">✓ Confirm All High-Conf (≥0.90)</button>
+      <button class="btn btn-ghost btn-sm" onclick="batchExcludeLow()">✗ Exclude Low-Conf (&lt;0.70)</button>
+      <span style="font-size:13px;color:var(--text-muted);margin-left:auto">${items.length} items pending</span>
+    </div>`;
+
+  container.innerHTML = batchBar + items.map(r => {
+    const cropUrl = r.face_crop_path
+      ? `/media/${r.face_crop_path.replace(/^.*?character-identity-board-data\/projects\//, '')}`
+      : '';
+    const reasons = (r.reasons || []).map(reason =>
+      `<span class="review-reason">${esc(reason)}</span>`
+    ).join(' ');
+    return `
+      <div class="review-card ${r.review_status}" id="review-card-${r.tracklet_id}">
+        <input type="checkbox" class="review-checkbox" data-tracklet="${r.tracklet_id}" 
+               onchange="updateSelectedCount()" style="width:18px;height:18px;cursor:pointer;flex-shrink:0">
+        ${cropUrl ? `<img class="review-crop" src="${cropUrl}" alt="face" loading="lazy" onerror="this.style.display='none'">` :
+          `<div class="review-crop" style="display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:11px">N/A</div>`}
+        <div class="review-info">
+          <div class="review-shot">Shot #${r.shot_number} · ${r.timecode_start}</div>
+          <div class="review-character">${esc(r.character_name)} <span style="color:var(--text-muted);font-weight:400">(${esc(r.character_code)})</span></div>
+          <div class="review-details">
+            <span>confidence: <strong>${(r.identity_confidence || 0).toFixed(3)}</strong></span>
+            <span>quality: <strong>${(r.quality_score || 0).toFixed(3)}</strong></span>
+            <span>source: ${esc(r.assignment_source)}</span>
+            ${reasons}
+          </div>
+        </div>
+        <div class="review-actions">
+          ${r.review_status === 'pending' ? `
+            <select class="review-char-select" id="char-select-${r.tracklet_id}" style="
+              background:var(--card);color:var(--foreground);border:1px solid var(--border);
+              border-radius:4px;padding:4px 6px;font-size:12px;max-width:140px;
+            ">
+              <option value="">-- 选择人物 --</option>
+            </select>
+            <button class="btn btn-success btn-sm" onclick="confirmWithChar(${r.tracklet_id})">✓ 确认</button>
+            <button class="btn btn-ghost btn-sm" onclick="markUnknown(${r.tracklet_id})">Unknown</button>
+            <button class="btn btn-sm" style="background:var(--red);color:white" onclick="excludeNotFace(${r.tracklet_id})">✗ Not a face</button>
+          ` : `<span style="font-size:11px;color:var(--green)">✓ Confirmed</span>`}
+        </div>
+      </div>`;
+  }).join('');
+  // Populate character dropdowns after rendering
+  populateCharDropdowns();
+}
+
+// ─── Batch Selection ────────────────────────────────────
+function toggleSelectAll(checkbox) {
+  const all = document.querySelectorAll('.review-checkbox');
+  all.forEach(cb => { cb.checked = checkbox.checked; });
+  updateSelectedCount();
+}
+
+function updateSelectedCount() {
+  const checked = document.querySelectorAll('.review-checkbox:checked').length;
+  const el = document.getElementById('review-selected-count');
+  if (el) el.textContent = checked;
+}
+
+function getSelectedTracklets() {
+  return [...document.querySelectorAll('.review-checkbox:checked')].map(cb => cb.dataset.tracklet);
+}
+
+// Optimistic removal: fade out and remove cards without full page reload
+function removeReviewCards(trackletIds) {
+  trackletIds.forEach(id => {
+    const card = document.getElementById('review-card-' + id);
+    if (card) {
+      card.style.transition = 'opacity 0.2s, transform 0.2s';
+      card.style.opacity = '0';
+      card.style.transform = 'translateX(30px)';
+      setTimeout(() => card.remove(), 200);
+    }
+  });
+  // Update count
+  setTimeout(() => {
+    updateSelectedCount();
+    const remaining = document.querySelectorAll('.review-card').length;
+    const batchBar = document.getElementById('review-batch-bar');
+    if (batchBar) {
+      const countSpan = batchBar.querySelector('span:last-child');
+      if (countSpan) countSpan.textContent = remaining + ' items pending';
+    }
+    if (remaining === 0) {
+      document.getElementById('review-container').innerHTML = 
+        `<div class="empty-state"><div class="empty-state-text">Review queue is empty 🎉</div></div>`;
+    }
+  }, 250);
+}
+
+// ─── Batch Actions ──────────────────────────────────────
+
+// Batch: mark selected as "Not a face"
+async function batchNotAFace() {
+  const ids = getSelectedTracklets();
+  if (!ids.length) { toast('请先选择要排除的项', 'error'); return; }
+  
+  toast(`正在排除 ${ids.length} 项...`, 'info');
+  
+  // Optimistic: remove from UI immediately
+  removeReviewCards(ids);
+  
+  // Send API requests in parallel
+  const results = await Promise.allSettled(ids.map(id =>
+    api(`/tracklets/${id}/assignment`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ review_status: 'confirmed', note: 'Excluded: not a real face (batch)' })
+    })
+  ));
+  
+  const ok = results.filter(r => r.status === 'fulfilled').length;
+  const fail = results.filter(r => r.status === 'rejected').length;
+  
+  if (fail) {
+    toast(`排除 ${ok} 项成功，${fail} 项失败`, fail === ids.length ? 'error' : 'info');
+    if (ok === 0) {
+      // All failed, reload to restore state
+      if (currentProject) loadReviewQueue(currentProject.id);
+    }
+  } else {
+    toast(`✓ 已排除 ${ok} 项 (Not a face)`, 'success');
+  }
+  
+  // Refresh characters count
+  if (currentProject) loadCharacters(currentProject.id);
+}
+
+// Confirm high-confidence (existing, improved with optimistic update)
+async function batchConfirm() {
+  if (!currentProject) return;
+  try {
+    const items = await api(`/projects/${currentProject.id}/review-queue`);
+    const highConf = items.filter(r => r.identity_confidence >= 0.90);
+    if (!highConf.length) { toast('没有高置信度项', 'info'); return; }
+    
+    toast(`正在确认 ${highConf.length} 项...`, 'info');
+    
+    // Optimistic
+    removeReviewCards(highConf.map(r => String(r.tracklet_id)));
+    
+    const results = await Promise.allSettled(highConf.map(r =>
+      api(`/tracklets/${r.tracklet_id}/assignment`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ review_status: 'confirmed' })
+      })
+    ));
+    
+    const ok = results.filter(r => r.status === 'fulfilled').length;
+    toast(`✓ 已确认 ${ok} 项高置信度`, 'success');
+    if (currentProject) loadCharacters(currentProject.id);
+  } catch (e) {
+    toast('Batch confirm failed: ' + e.message, 'error');
+  }
+}
+
+// Exclude low-confidence (existing, improved with optimistic update)
+async function batchExcludeLow() {
+  if (!currentProject) return;
+  try {
+    const items = await api(`/projects/${currentProject.id}/review-queue`);
+    const lowConf = items.filter(r => r.identity_confidence < 0.70);
+    if (!lowConf.length) { toast('没有低置信度项', 'info'); return; }
+    
+    toast(`正在排除 ${lowConf.length} 项...`, 'info');
+    
+    // Optimistic
+    removeReviewCards(lowConf.map(r => String(r.tracklet_id)));
+    
+    const results = await Promise.allSettled(lowConf.map(r =>
+      api(`/tracklets/${r.tracklet_id}/assignment`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ character_id: 0, note: 'Excluded: low confidence' })
+      })
+    ));
+    
+    const ok = results.filter(r => r.status === 'fulfilled').length;
+    toast(`✓ 已排除 ${ok} 项低置信度`, 'success');
+    if (currentProject) loadCharacters(currentProject.id);
+  } catch (e) {
+    toast('Batch exclude failed: ' + e.message, 'error');
+  }
+}
+
+// ─── Single Actions (optimistic, no full reload) ────────
+
+async function confirmReview(trackletId) {
+  try {
+    await api(`/tracklets/${trackletId}/assignment`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ review_status: 'confirmed' })
+    });
+    toast('Review confirmed', 'success');
+    removeReviewCards([String(trackletId)]);
+  } catch (e) {
+    toast('Failed: ' + e.message, 'error');
+  }
+}
+
+async function markUnknown(trackletId) {
+  try {
+    await api(`/tracklets/${trackletId}/assignment`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ character_id: 0, note: 'Marked unknown by user' })
+    });
+    toast('Marked as Unknown', 'info');
+    removeReviewCards([String(trackletId)]);
+    if (currentProject) loadCharacters(currentProject.id);
+  } catch (e) {
+    toast('Failed: ' + e.message, 'error');
+  }
+}
+
+async function excludeNotFace(trackletId) {
+  try {
+    await api(`/tracklets/${trackletId}/assignment`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ review_status: 'confirmed', note: 'Excluded: not a real face' })
+    });
+    toast('Excluded as non-face', 'success');
+    removeReviewCards([String(trackletId)]);
+  } catch (e) {
+    toast('Failed: ' + e.message, 'error');
+  }
+}
+
+async function confirmWithChar(trackletId) {
+  const select = document.getElementById(`char-select-${trackletId}`);
+  const charId = select ? select.value : '';
+  
+  try {
+    if (charId) {
+      await api(`/tracklets/${trackletId}/assignment`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ character_id: parseInt(charId), review_status: 'confirmed' })
+      });
+      toast('Assigned and confirmed', 'success');
+    } else {
+      await confirmReview(trackletId);
+      return;
+    }
+    removeReviewCards([String(trackletId)]);
+  } catch (e) {
+    toast('Failed: ' + e.message, 'error');
+  }
+}
+
+async function reassignTracklet(trackletId, newCharacterId) {
+  try {
+    await api(`/tracklets/${trackletId}/assignment`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ character_id: newCharacterId, review_status: 'confirmed' })
+    });
+    toast('Reassigned successfully', 'success');
+    removeReviewCards([String(trackletId)]);
+  } catch (e) {
+    toast('Failed: ' + e.message, 'error');
+  }
+}
+
+// ─── Populate dropdowns ─────────────────────────────────
+async function populateCharDropdowns() {
+  if (!currentProject) return;
+  try {
+    const chars = await api(`/projects/${currentProject.id}/characters`);
+    const selects = document.querySelectorAll('.review-char-select');
+    selects.forEach(sel => {
+      const currentVal = sel.value;
+      sel.innerHTML = '<option value="">-- 选择人物 --</option>';
+      chars.forEach(c => {
+        if (c.character_code === 'UNKNOWN') return;
+        const opt = document.createElement('option');
+        opt.value = c.id;
+        opt.textContent = `${c.display_name} (${c.character_code})`;
+        sel.appendChild(opt);
+      });
+      sel.value = currentVal;
+    });
+  } catch (e) {
+    console.error('Failed to load characters for dropdown:', e);
   }
 }
 
@@ -327,7 +587,6 @@ async function refreshProcessing() {
     const processing = projects.filter(p => p.status === 'processing');
 
     if (!processing.length) {
-      // Also check all projects for videos being processed
       let allVideos = [];
       for (const p of projects) {
         try {
@@ -350,7 +609,6 @@ async function refreshProcessing() {
       return;
     }
 
-    // Load videos for processing projects
     let html = '';
     for (const p of processing) {
       const videos = await api(`/projects/${p.id}/videos`);
@@ -365,7 +623,6 @@ async function refreshProcessing() {
 }
 
 function renderProcessingVideo(video, project) {
-  // Estimate progress from pipeline stage
   const stages = ['uploaded', 'probed', 'shots_detected', 'tracklets_created',
                   'faces_embedded', 'clustered', 'thumbnails_generated', 'completed'];
   const stageIndex = stages.indexOf(video.pipeline_stage);
@@ -399,37 +656,6 @@ function renderProcessingVideo(video, project) {
 }
 
 // ─── Actions ────────────────────────────────────────────
-async function confirmReview(trackletId) {
-  try {
-    await api(`/tracklets/${trackletId}/assignment`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ review_status: 'confirmed' })
-    });
-    toast('Review confirmed', 'success');
-    if (currentProject) loadReviewQueue(currentProject.id);
-  } catch (e) {
-    toast('Failed: ' + e.message, 'error');
-  }
-}
-
-async function markUnknown(trackletId) {
-  try {
-    await api(`/tracklets/${trackletId}/assignment`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ character_id: 0, note: 'Marked unknown by user' })
-    });
-    toast('Marked as Unknown', 'info');
-    if (currentProject) {
-      loadReviewQueue(currentProject.id);
-      loadCharacters(currentProject.id);
-    }
-  } catch (e) {
-    toast('Failed: ' + e.message, 'error');
-  }
-}
-
 async function recluster() {
   if (!currentProject) return;
   try {
@@ -437,126 +663,6 @@ async function recluster() {
     toast('Recluster started', 'info');
   } catch (e) {
     toast('Failed: ' + e.message, 'error');
-  }
-}
-
-async function excludeNotFace(trackletId) {
-  try {
-    await api(`/tracklets/${trackletId}/assignment`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ review_status: 'confirmed', note: 'Excluded: not a real face' })
-    });
-    toast('Excluded as non-face', 'success');
-    if (currentProject) loadReviewQueue(currentProject.id);
-  } catch (e) {
-    toast('Failed: ' + e.message, 'error');
-  }
-}
-
-async function reassignTracklet(trackletId, newCharacterId) {
-  try {
-    await api(`/tracklets/${trackletId}/assignment`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ character_id: newCharacterId, review_status: 'confirmed' })
-    });
-    toast('Reassigned successfully', 'success');
-    if (currentProject) loadReviewQueue(currentProject.id);
-  } catch (e) {
-    toast('Failed: ' + e.message, 'error');
-  }
-}
-
-// Confirm review with character assignment from dropdown
-async function confirmWithChar(trackletId) {
-  const select = document.getElementById(`char-select-${trackletId}`);
-  const charId = select ? select.value : '';
-  
-  try {
-    if (charId) {
-      // Assign to specific character
-      await api(`/tracklets/${trackletId}/assignment`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ character_id: parseInt(charId), review_status: 'confirmed' })
-      });
-      toast('Assigned and confirmed', 'success');
-    } else {
-      // No character selected, just confirm current assignment
-      await confirmReview(trackletId);
-      return;
-    }
-    if (currentProject) loadReviewQueue(currentProject.id);
-  } catch (e) {
-    toast('Failed: ' + e.message, 'error');
-  }
-}
-
-// Populate character dropdowns in review queue
-async function populateCharDropdowns() {
-  if (!currentProject) return;
-  try {
-    const chars = await api(`/projects/${currentProject.id}/characters`);
-    const selects = document.querySelectorAll('.review-char-select');
-    selects.forEach(sel => {
-      const currentVal = sel.value;
-      sel.innerHTML = '<option value="">-- 选择人物 --</option>';
-      chars.forEach(c => {
-        if (c.character_code === 'UNKNOWN') return; // Skip Unknown
-        const opt = document.createElement('option');
-        opt.value = c.id;
-        opt.textContent = `${c.display_name} (${c.character_code})`;
-        sel.appendChild(opt);
-      });
-      sel.value = currentVal;
-    });
-  } catch (e) {
-    console.error('Failed to load characters for dropdown:', e);
-  }
-}
-
-async function batchConfirm() {
-  if (!currentProject) return;
-  try {
-    const items = await api(`/projects/${currentProject.id}/review-queue`);
-    const highConf = items.filter(r => r.identity_confidence >= 0.90);
-    let done = 0;
-    for (const r of highConf) {
-      await api(`/tracklets/${r.tracklet_id}/assignment`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ review_status: 'confirmed' })
-      });
-      done++;
-    }
-    toast(`Confirmed ${done} high-confidence items`, 'success');
-    loadReviewQueue(currentProject.id);
-    loadCharacters(currentProject.id);
-  } catch (e) {
-    toast('Batch confirm failed: ' + e.message, 'error');
-  }
-}
-
-async function batchExcludeLow() {
-  if (!currentProject) return;
-  try {
-    const items = await api(`/projects/${currentProject.id}/review-queue`);
-    const lowConf = items.filter(r => r.identity_confidence < 0.70);
-    let done = 0;
-    for (const r of lowConf) {
-      await api(`/tracklets/${r.tracklet_id}/assignment`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ character_id: 0, note: 'Excluded: low confidence' })
-      });
-      done++;
-    }
-    toast(`Excluded ${done} low-confidence items`, 'success');
-    loadReviewQueue(currentProject.id);
-    loadCharacters(currentProject.id);
-  } catch (e) {
-    toast('Batch exclude failed: ' + e.message, 'error');
   }
 }
 
