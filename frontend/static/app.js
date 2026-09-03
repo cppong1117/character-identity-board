@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 8000);
 });
 
+  // Add hover CSS for face exclude buttons
+  const style = document.createElement('style');
+  style.textContent = `
+    .char-face-wrap:hover .char-face-x { opacity: 1 !important; }
+    .char-face-wrap:hover .char-face-img { border-color: #ef4444 !important; }
+  `;
+  document.head.appendChild(style);
+
+
 // ─── API Helpers ────────────────────────────────────────
 async function api(path, opts = {}) {
   const res = await fetch(API + path, opts);
@@ -187,7 +196,14 @@ async function loadCharacters(projectId) {
 
       const facesHtml = faces.length ? `<div style="display:flex;gap:6px;overflow-x:auto;padding:4px 0">${faces.map(o => {
         const url = '/media/' + o.face_crop_path.replace(/^.*?character-identity-board-data\/projects\//, '');
-        return `<img src="${url}" style="width:56px;height:56px;object-fit:cover;border-radius:8px;border:2px solid var(--border);flex-shrink:0" title="Shot #${o.shot_number} q=${(o.quality_score||0).toFixed(2)}" onerror="this.style.display='none'">`;
+        return `<div style="position:relative;flex-shrink:0" class="char-face-wrap">
+          <img src="${url}" class="char-face-img" data-obs="${o.id}"
+            style="width:56px;height:56px;object-fit:cover;border-radius:8px;border:2px solid var(--border);cursor:pointer"
+            title="Shot #${o.shot_number} q=${(o.quality_score||0).toFixed(2)} — click to exclude"
+            onclick="excludeObservation(${o.id}, this)" onerror="this.style.display='none'">
+          <div style="position:absolute;top:-4px;right:-4px;width:18px;height:18px;background:#ef4444;color:white;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity 0.2s"
+            class="char-face-x" onclick="event.stopPropagation();excludeObservation(${o.id}, this.parentElement.querySelector('img'))">✕</div>
+        </div>`;
       }).join('')}</div>` : '';
 
       const pendingHtml = c.pending_review > 0 ? `<div style="font-size:12px;color:var(--yellow)">⚠ ${c.pending_review} pending review</div>` : '';
@@ -517,6 +533,30 @@ async function excludeNotFace(trackletId) {
     removeReviewCards([String(trackletId)]);
   } catch (e) {
     toast('Failed: ' + e.message, 'error');
+  }
+}
+
+// ─── Exclude single observation from character ─────────
+async function excludeObservation(obsId, imgEl) {
+  try {
+    // Fade out immediately
+    const wrap = imgEl.closest('.char-face-wrap') || imgEl.parentElement;
+    wrap.style.transition = 'opacity 0.3s, transform 0.3s';
+    wrap.style.opacity = '0';
+    wrap.style.transform = 'scale(0.8)';
+    
+    await api(`/observations/${obsId}/exclude`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ excluded: true, reason: 'excluded by user (click)' })
+    });
+    
+    toast('✓ 已排除这张脸', 'success');
+    setTimeout(() => wrap.remove(), 300);
+  } catch (e) {
+    toast('Failed: ' + e.message, 'error');
+    // Restore on error
+    if (imgEl) { imgEl.style.opacity = '1'; }
   }
 }
 
