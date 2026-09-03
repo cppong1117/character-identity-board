@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   style.textContent = `
     .char-face-wrap:hover .char-face-x { opacity: 1 !important; }
     .char-face-wrap:hover .char-face-img { border-color: #ef4444 !important; }
+    .char-face-img.selected { border-color: #22c55e !important; box-shadow: 0 0 8px rgba(34,197,94,0.4); }
   `;
   document.head.appendChild(style);
 
@@ -207,6 +208,11 @@ async function loadCharacters(projectId) {
       }).join('')}</div>` : '';
 
       const pendingHtml = c.pending_review > 0 ? `<div style="font-size:12px;color:var(--yellow)">⚠ ${c.pending_review} pending review</div>` : '';
+      
+      const batchBar = `<div style="display:flex;gap:6px;margin-top:8px;align-items:center">
+        <button onclick="toggleFaceSelect(${c.id})" style="background:var(--card);color:var(--foreground);border:1px solid var(--border);padding:4px 10px;border-radius:4px;cursor:pointer;font-size:11px">☐ 选择</button>
+        <button onclick="batchExcludeFaces(${c.id})" style="background:#ef4444;color:white;border:none;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:11px">✗ 排除选中</button>
+      </div>`;
 
       html += `
         <div class="character-card" style="flex-direction:column;align-items:stretch;gap:12px">
@@ -226,6 +232,7 @@ async function loadCharacters(projectId) {
             </div>
           </div>
           ${facesHtml}
+          ${batchBar}
           ${pendingHtml}
         </div>`;
     }
@@ -558,6 +565,47 @@ async function excludeObservation(obsId, imgEl) {
     // Restore on error
     if (imgEl) { imgEl.style.opacity = '1'; }
   }
+}
+
+// ─── Batch exclude observations from character ─────────
+async function batchExcludeFaces(charId) {
+  const checked = document.querySelectorAll(`.char-face-img[data-char="${charId}"].selected`);
+  if (!checked.length) { toast('请先选择要排除的脸', 'error'); return; }
+  
+  const obsIds = [...checked].map(img => img.dataset.obs);
+  toast(`正在排除 ${obsIds.length} 张脸...`, 'info');
+  
+  const results = await Promise.allSettled(obsIds.map(id =>
+    api(`/observations/${id}/exclude`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ excluded: true, reason: 'batch excluded by user' })
+    })
+  ));
+  
+  const ok = results.filter(r => r.status === 'fulfilled').length;
+  toast(`✓ 已排除 ${ok}/${obsIds.length} 张脸`, 'success');
+  
+  // Remove from UI
+  checked.forEach(img => {
+    const wrap = img.closest('.char-face-wrap');
+    if (wrap) {
+      wrap.style.transition = 'opacity 0.3s';
+      wrap.style.opacity = '0';
+      setTimeout(() => wrap.remove(), 300);
+    }
+  });
+  
+  if (currentProject) loadCharacters(currentProject.id);
+}
+
+function toggleFaceSelect(charId) {
+  const imgs = document.querySelectorAll(`.char-face-img[data-char="${charId}"]`);
+  const allSelected = [...imgs].every(img => img.classList.contains('selected'));
+  imgs.forEach(img => {
+    img.classList.toggle('selected', !allSelected);
+    img.style.border = !allSelected ? '2px solid #22c55e' : '2px solid var(--border)';
+  });
 }
 
 async function confirmWithChar(trackletId) {
