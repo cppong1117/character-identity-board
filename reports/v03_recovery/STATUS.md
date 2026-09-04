@@ -47,3 +47,10 @@ Thresholds **unchanged** (0.40 / 0.50 / 0.30).
 - No threshold lowering to shrink Unknown
 - No overwrite of manual assignments
 - No full recluster yet
+
+
+## Phase 4 runner switch (2026-09-04)
+
+Old multi-writer SQLite parallel stalled (~2%).
+New: `scripts/phase4_reembed_v2_shards.py` — workers write jsonl shards, single DB apply.
+Smoke 200: 198/200 aligned, 0 fail, DB apply OK.
