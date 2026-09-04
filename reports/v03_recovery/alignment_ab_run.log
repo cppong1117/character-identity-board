@@ -1,0 +1,42 @@
+shots 30 [1069, 969, 738, 746, 631, 232, 644, 243, 817, 246, 1055, 1020, 957, 836, 604, 633, 627, 1066, 911, 639, 735, 695, 908, 634, 739, 416, 451, 217, 939, 762]
+named candidates 4000
+[ WARN:0@0.483] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[1;31m2026-09-04 22:30:14.459967145 [E:onnxruntime:Default, provider_bridge_ort.cc:1992 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1637 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcudnn.so.9: cannot open shared object file: No such file or directory
+[m
+[0;93m2026-09-04 22:30:14.460038106 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:965 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Require cuDNN 9.* and CUDA 12.*. Please install all dependencies as mentioned in the GPU requirements page (https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirements), make sure they're in the PATH, and that your GPU is supported.[m
+  ArcFace loaded: /home/ponky_re6000/.insightface/models/buffalo_l/w600k_r50.onnx providers=['CPUExecutionProvider']
+embedded 100/2500 skipped=1 frames=1 32.7s
+embedded 200/2500 skipped=2 frames=2 61.9s
+embedded 300/2500 skipped=30 frames=2 97.2s
+embedded 400/2500 skipped=44 frames=2 129.6s
+embedded 500/2500 skipped=69 frames=2 162.0s
+embedded 600/2500 skipped=103 frames=2 195.1s
+embedded 700/2500 skipped=122 frames=3 227.0s
+embedded 800/2500 skipped=151 frames=4 259.0s
+embedded 900/2500 skipped=195 frames=6 288.4s
+embedded 1000/2500 skipped=197 frames=6 317.9s
+embedded 1100/2500 skipped=198 frames=7 349.0s
+embedded 1200/2500 skipped=200 frames=7 382.0s
+embedded 1300/2500 skipped=200 frames=7 407.7s
+embedded 1400/2500 skipped=201 frames=7 449.1s
+embedded 1500/2500 skipped=201 frames=7 482.2s
+embedded 1600/2500 skipped=208 frames=8 508.2s
+embedded 1700/2500 skipped=222 frames=9 539.0s
+embedded 1800/2500 skipped=233 frames=9 576.4s
+embedded 1900/2500 skipped=233 frames=9 607.4s
+embedded 2000/2500 skipped=233 frames=9 635.0s
+embedded 2100/2500 skipped=233 frames=9 663.4s
+embedded 2200/2500 skipped=235 frames=10 695.8s
+embedded 2300/2500 skipped=241 frames=11 727.3s
+embedded 2400/2500 skipped=288 frames=11 759.1s
+embedded 2500/2500 skipped=305 frames=12 791.1s
+records=2500 skipped=305 time=791.1s
+per_char {'SMY': 891, 'DOCTOR': 881, 'mbq': 219, 'lw': 509}
+{
+  "separation_improved": true,
+  "false_merge_not_worse": true,
+  "same_person_mean_ok": true,
+  "overall_PASS": true
+}
+SEP 0.4512243542583524 0.5191479086231061 FAR {'v1@0.40': 0.061, 'v2@0.40': 0.03133333333333333, 'v1@0.50': 0.024, 'v2@0.50': 0.014333333333333333}
+WROTE /home/ponky_re6000/character-identity-board/reports/v03_recovery/alignment_ab_test.md
