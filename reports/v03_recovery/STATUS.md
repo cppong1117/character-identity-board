@@ -1,20 +1,27 @@
-# CIB V0.3 STATUS — 2026-09-05 00:34:38 CST
+# CIB V0.3 STATUS — 2026-09-05 delivery
 
-## DONE
-- Phase 0 baseline
-- Phase 1 unknown audit
-- Phase 2 5-pt alignment
-- Phase 3 A/B PASS (sep 0.45→0.52, FAR@0.40 6.1%→3.1%)
-- **Phase 4 re-embed V2 COMPLETE** — film 85307/85307, fail=0, aligned 93.8%
-- **Phase 5 prototypes + contamination** — 1372 protos, mixed 384, Unknown recoverable@0.40 = 110 (NOT applied)
+## DONE (deliverable)
+- Phase 0–3: baseline, audit, alignment, A/B PASS
+- Phase 4: film embedding_v2 **85307/85307** (GPU)
+- Phase 5: prototypes 1372 + mixed 384
+- Dual-assignment repair **609→0**
+- HQ reference bank (5 named × 40 faces)
+- Precision demote weak/mixed auto named **93**
+- Visual QC on HQ refs + sample suggestions
+- Site http://127.0.0.1:8322 HTTP 200
 
 ## LOCKED
 - thresholds 0.40 / 0.50 / 0.30
-- no manual overwrite
-- no full recluster yet
+- manual/confirmed Unknown not auto-changed
+- no full HDBSCAN recluster
 
-## NEXT
-- Phase 6 quality evidence gate
-- Phase 7 reference bank from locked pure tracklets
-- Phase 8 margin matching + calibration
-- Phase 9 safe reassignment (skip manual_locked)
+## BOARD (film unique tracklets)
+Unknown 1273 | SMY 122 | DOCTOR 48 | ZY 23 | lw 17 | mbq 15
+
+## HUMAN NEXT (optional)
+- Review `reports/v03_recovery/delivery_qc_hq/unknown_suggest/` (63 locked high-sim)
+- Split/exclude mixed tracklets (384)
+- Watch lw cluster in UI
+
+## REPORT
+`reports/v03_recovery/DELIVERY_V03.md`

@@ -1,0 +1,219 @@
+{
+  "demoted": 93,
+  "pending_lowconf": 8,
+  "kept_strong_or_manual": 217,
+  "counts": [
+    {
+      "name": "Unknown",
+      "n": 1273,
+      "confirmed_frac": 0.926
+    },
+    {
+      "name": "SMY",
+      "n": 122,
+      "confirmed_frac": 0.025
+    },
+    {
+      "name": "DOCTOR",
+      "n": 48,
+      "confirmed_frac": 0.021
+    },
+    {
+      "name": "ZY",
+      "n": 23,
+      "confirmed_frac": 0.0
+    },
+    {
+      "name": "lw",
+      "n": 17,
+      "confirmed_frac": 0.0
+    },
+    {
+      "name": "mbq",
+      "n": 15,
+      "confirmed_frac": 0.133
+    }
+  ],
+  "named_self_sim_after": [
+    {
+      "name": "ZY",
+      "n": 23,
+      "mean": 0.59,
+      "p10": 0.499,
+      "frac_ge040": 1.0,
+      "frac_lt030": 0.0
+    },
+    {
+      "name": "SMY",
+      "n": 120,
+      "mean": 0.554,
+      "p10": 0.452,
+      "frac_ge040": 0.967,
+      "frac_lt030": 0.0
+    },
+    {
+      "name": "DOCTOR",
+      "n": 47,
+      "mean": 0.582,
+      "p10": 0.507,
+      "frac_ge040": 1.0,
+      "frac_lt030": 0.0
+    },
+    {
+      "name": "mbq",
+      "n": 13,
+      "mean": 0.536,
+      "p10": 0.413,
+      "frac_ge040": 0.923,
+      "frac_lt030": 0.0
+    },
+    {
+      "name": "lw",
+      "n": 17,
+      "mean": 0.507,
+      "p10": 0.348,
+      "frac_ge040": 0.824,
+      "frac_lt030": 0.0
+    }
+  ],
+  "centroid_pairs": {
+    "ZY-SMY": 0.081,
+    "ZY-DOCTOR": 0.094,
+    "ZY-mbq": 0.058,
+    "ZY-lw": -0.06,
+    "SMY-DOCTOR": 0.084,
+    "SMY-mbq": 0.035,
+    "SMY-lw": -0.002,
+    "DOCTOR-mbq": 0.171,
+    "DOCTOR-lw": 0.045,
+    "mbq-lw": 0.126
+  },
+  "demote_samples": [
+    {
+      "tid": 291,
+      "from": "ZY",
+      "why": "no_proto"
+    },
+    {
+      "tid": 292,
+      "from": "ZY",
+      "why": "no_proto"
+    },
+    {
+      "tid": 318,
+      "from": "SMY",
+      "own": 0.031,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 319,
+      "from": "SMY",
+      "own": 0.025,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 320,
+      "from": "SMY",
+      "own": 0.002,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 321,
+      "from": "SMY",
+      "own": 0.031,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 343,
+      "from": "ZY",
+      "why": "no_proto"
+    },
+    {
+      "tid": 344,
+      "from": "ZY",
+      "own": 0.114,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 346,
+      "from": "ZY",
+      "own": 0.084,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 347,
+      "from": "ZY",
+      "own": 0.084,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 376,
+      "from": "SMY",
+      "own": 0.157,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 454,
+      "from": "ZY",
+      "own": 0.011,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 455,
+      "from": "ZY",
+      "own": 0.112,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 456,
+      "from": "ZY",
+      "own": 0.001,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 459,
+      "from": "ZY",
+      "why": "no_proto"
+    },
+    {
+      "tid": 616,
+      "from": "SMY",
+      "why": "no_proto"
+    },
+    {
+      "tid": 933,
+      "from": "lw",
+      "own": 0.185,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    },
+    {
+      "tid": 946,
+      "from": "lw",
+      "why": "no_proto"
+    },
+    {
+      "tid": 961,
+      "from": "lw",
+      "why": "no_proto"
+    },
+    {
+      "tid": 968,
+      "from": "lw",
+      "own": 0.177,
+      "mixed": 0,
+      "why": "weak_or_mixed"
+    }
+  ]
+}

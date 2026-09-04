@@ -1,0 +1,5845 @@
+{
+  "summary": {
+    "finished": "2026-09-05T00:49:07+08:00",
+    "apply": true,
+    "elapsed_sec": 0.2,
+    "thresholds": {
+      "identity": 0.4,
+      "merge": 0.5,
+      "unknown": 0.3,
+      "margin_auto": 0.08
+    },
+    "ref_bank": {
+      "SMY": {
+        "n_members": 159,
+        "n_refs": 30
+      },
+      "ZY": {
+        "n_members": 40,
+        "n_refs": 30
+      },
+      "lw": {
+        "n_members": 54,
+        "n_refs": 30
+      },
+      "mbq": {
+        "n_members": 22,
+        "n_refs": 22
+      },
+      "DOCTOR": {
+        "n_members": 61,
+        "n_refs": 30
+      }
+    },
+    "dual_actions": 609,
+    "dual_deleted_assignments": 609,
+    "dual_remaining": 0,
+    "safe_moves_applied_or_planned": 0,
+    "locked_unknown_suggestions": 80,
+    "wrong_flags": 1,
+    "wrong_auto_fixable": 1,
+    "mixed_named": 22,
+    "character_counts": [
+      {
+        "name": "Unknown",
+        "n": 1180
+      },
+      {
+        "name": "SMY",
+        "n": 147
+      },
+      {
+        "name": "DOCTOR",
+        "n": 64
+      },
+      {
+        "name": "lw",
+        "n": 43
+      },
+      {
+        "name": "ZY",
+        "n": 42
+      },
+      {
+        "name": "mbq",
+        "n": 22
+      }
+    ],
+    "qc_images": 76
+  },
+  "dual_actions": [
+    {
+      "tracklet_id": 56,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.587 margin=0.381 mixed=False",
+      "keep": {
+        "ia_id": 3162,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1421,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 60,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3027,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 44,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 71,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.654 margin=0.413 mixed=False",
+      "keep": {
+        "ia_id": 2992,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1426,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 85,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.600 margin=0.261 mixed=False",
+      "keep": {
+        "ia_id": 3163,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1432,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 86,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.757 margin=0.479 mixed=False",
+      "keep": {
+        "ia_id": 2993,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1433,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 87,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.614 margin=0.338 mixed=False",
+      "keep": {
+        "ia_id": 3164,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1434,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 88,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.727 margin=0.470 mixed=False",
+      "keep": {
+        "ia_id": 2994,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1435,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 89,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.526 margin=0.323 mixed=False",
+      "keep": {
+        "ia_id": 2692,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1436,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 90,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.182 mixed=False",
+      "keep": {
+        "ia_id": 1437,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2995,
+          "name": "ZY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 91,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.300 mixed=False",
+      "keep": {
+        "ia_id": 1438,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2693,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 92,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.600 margin=0.295 mixed=False",
+      "keep": {
+        "ia_id": 2694,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1439,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 93,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.679 margin=0.468 mixed=False",
+      "keep": {
+        "ia_id": 2996,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1440,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 94,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.572 margin=0.304 mixed=False",
+      "keep": {
+        "ia_id": 2695,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1441,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 98,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.505 margin=0.367 mixed=False",
+      "keep": {
+        "ia_id": 2696,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1443,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 102,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3028,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 71,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 106,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 2975,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1448,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 116,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 2976,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1458,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 120,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.514 margin=0.280 mixed=False",
+      "keep": {
+        "ia_id": 2697,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1462,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 121,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.755 margin=0.494 mixed=False",
+      "keep": {
+        "ia_id": 3165,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1463,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 126,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3029,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1468,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 131,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.699 margin=0.417 mixed=False",
+      "keep": {
+        "ia_id": 2997,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1472,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 132,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3030,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1473,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 135,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3031,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1476,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 138,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3032,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1479,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 141,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.694 margin=0.421 mixed=False",
+      "keep": {
+        "ia_id": 2998,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1482,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 153,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3033,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1491,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 156,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.366 mixed=True",
+      "keep": {
+        "ia_id": 1492,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2904,
+          "name": "DOCTOR",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 157,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.603 mixed=True",
+      "keep": {
+        "ia_id": 1493,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2770,
+          "name": "mbq",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 162,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.738 margin=0.512 mixed=False",
+      "keep": {
+        "ia_id": 2771,
+        "name": "mbq",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1496,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 171,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3034,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1502,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 172,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3035,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 129,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 191,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3036,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1508,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 194,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.131 mixed=False",
+      "keep": {
+        "ia_id": 1509,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2999,
+          "name": "ZY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 200,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.656 margin=0.475 mixed=False",
+      "keep": {
+        "ia_id": 2905,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1512,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 202,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.694 margin=0.394 mixed=False",
+      "keep": {
+        "ia_id": 3000,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1513,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 203,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.295 mixed=False",
+      "keep": {
+        "ia_id": 1514,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2698,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 205,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.045 mixed=True",
+      "keep": {
+        "ia_id": 1516,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2906,
+          "name": "DOCTOR",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 208,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.815 margin=0.639 mixed=False",
+      "keep": {
+        "ia_id": 2907,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1519,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 215,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3037,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 156,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 228,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3038,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 163,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 238,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.854 margin=0.633 mixed=False",
+      "keep": {
+        "ia_id": 2908,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1526,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 248,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.727 margin=0.520 mixed=False",
+      "keep": {
+        "ia_id": 2909,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1529,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 256,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3039,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1532,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 271,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3040,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 190,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 279,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3041,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1542,
+          "name": "Unknown",
+          "source": "automatic_cluster",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 281,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3042,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1544,
+          "name": "Unknown",
+          "source": "automatic_cluster",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 289,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3043,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1551,
+          "name": "Unknown",
+          "source": "automatic_cluster",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 299,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3044,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 210,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 304,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3045,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1561,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 305,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3046,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1562,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 307,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3047,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1564,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 317,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3048,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1567,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 323,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3049,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1573,
+          "name": "Unknown",
+          "source": "automatic_cluster",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 326,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3050,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1575,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 329,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3051,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1578,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 331,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3052,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1580,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 333,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3053,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1581,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 350,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.548 margin=0.389 mixed=False",
+      "keep": {
+        "ia_id": 3166,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1587,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 357,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.634 margin=0.512 mixed=False",
+      "keep": {
+        "ia_id": 3001,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1592,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 360,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=-0.030 mixed=False",
+      "keep": {
+        "ia_id": 1594,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2910,
+          "name": "DOCTOR",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 373,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.771 margin=0.544 mixed=False",
+      "keep": {
+        "ia_id": 3167,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1598,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 374,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.591 mixed=True",
+      "keep": {
+        "ia_id": 1599,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3168,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 375,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.208 mixed=True",
+      "keep": {
+        "ia_id": 1600,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2911,
+          "name": "DOCTOR",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 376,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.389 margin=0.097 mixed=False",
+      "keep": {
+        "ia_id": 3169,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1601,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 378,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.827 margin=0.652 mixed=False",
+      "keep": {
+        "ia_id": 2912,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1603,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 379,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.210 mixed=False",
+      "keep": {
+        "ia_id": 1604,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3170,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 381,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.869 margin=0.724 mixed=False",
+      "keep": {
+        "ia_id": 2913,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1606,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 382,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.658 margin=0.502 mixed=False",
+      "keep": {
+        "ia_id": 3171,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1607,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 383,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.867 margin=0.713 mixed=False",
+      "keep": {
+        "ia_id": 2914,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1608,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 384,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3054,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 265,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 385,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.575 mixed=True",
+      "keep": {
+        "ia_id": 1609,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3172,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 387,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3055,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1611,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 388,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.136 mixed=False",
+      "keep": {
+        "ia_id": 1612,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3173,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 389,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.741 margin=0.540 mixed=False",
+      "keep": {
+        "ia_id": 2915,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1613,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 397,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.559 mixed=True",
+      "keep": {
+        "ia_id": 1614,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3174,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 398,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3056,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 272,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 401,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.751 margin=0.569 mixed=False",
+      "keep": {
+        "ia_id": 3175,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1615,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 402,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.527 mixed=True",
+      "keep": {
+        "ia_id": 1616,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2916,
+          "name": "DOCTOR",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 407,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.619 margin=0.410 mixed=False",
+      "keep": {
+        "ia_id": 2699,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1620,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 411,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.684 margin=0.432 mixed=False",
+      "keep": {
+        "ia_id": 3002,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1623,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 412,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.695 margin=0.445 mixed=False",
+      "keep": {
+        "ia_id": 3003,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1624,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 413,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.644 margin=0.433 mixed=False",
+      "keep": {
+        "ia_id": 2700,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1625,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 424,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.588 margin=0.439 mixed=False",
+      "keep": {
+        "ia_id": 2701,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1631,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 425,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.632 margin=0.331 mixed=False",
+      "keep": {
+        "ia_id": 3176,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1632,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 427,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3057,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1634,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 431,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.652 margin=0.378 mixed=False",
+      "keep": {
+        "ia_id": 3177,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1635,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 432,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.236 mixed=False",
+      "keep": {
+        "ia_id": 1636,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2702,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 434,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3058,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1638,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 445,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3059,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1642,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 446,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3060,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1643,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 448,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3061,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1644,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 451,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3062,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1647,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 466,
+      "decision": "keep_match_named",
+      "reason": "sim=0.690 margin=0.468",
+      "keep": {
+        "ia_id": 1654,
+        "name": "SMY",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3178,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 473,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3063,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1657,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 474,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.613 margin=0.373 mixed=False",
+      "keep": {
+        "ia_id": 3179,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1658,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 479,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.630 margin=0.370 mixed=False",
+      "keep": {
+        "ia_id": 3180,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1661,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 482,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.618 mixed=True",
+      "keep": {
+        "ia_id": 1664,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3181,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 484,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.662 margin=0.382 mixed=False",
+      "keep": {
+        "ia_id": 3182,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 324,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 486,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.635 margin=0.408 mixed=False",
+      "keep": {
+        "ia_id": 3183,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1667,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 489,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.582 margin=0.318 mixed=False",
+      "keep": {
+        "ia_id": 3184,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1670,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 490,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3064,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 330,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 493,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.813 margin=0.554 mixed=False",
+      "keep": {
+        "ia_id": 3185,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1671,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 495,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.760 margin=0.516 mixed=False",
+      "keep": {
+        "ia_id": 3186,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1673,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 497,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.720 margin=0.421 mixed=False",
+      "keep": {
+        "ia_id": 3187,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1675,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 499,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.595 margin=0.375 mixed=False",
+      "keep": {
+        "ia_id": 3188,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1677,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 501,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.707 margin=0.451 mixed=False",
+      "keep": {
+        "ia_id": 3189,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1679,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 502,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.334 mixed=False",
+      "keep": {
+        "ia_id": 1680,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3190,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 506,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.765 margin=0.490 mixed=False",
+      "keep": {
+        "ia_id": 3191,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1683,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 509,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.519 mixed=True",
+      "keep": {
+        "ia_id": 1686,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3192,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 510,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.594 margin=0.235 mixed=False",
+      "keep": {
+        "ia_id": 3193,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 348,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 525,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3065,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1688,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 536,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3066,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1692,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 550,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.359 mixed=True",
+      "keep": {
+        "ia_id": 1706,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3194,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 579,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3067,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1733,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 580,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.114 mixed=True",
+      "keep": {
+        "ia_id": 1734,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3195,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 616,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.950 margin=0.000 mixed=False",
+      "keep": {
+        "ia_id": 3196,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1738,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 624,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.312 mixed=True",
+      "keep": {
+        "ia_id": 1740,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3197,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 637,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.500 margin=0.408 mixed=False",
+      "keep": {
+        "ia_id": 2703,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1742,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 638,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.506 margin=0.403 mixed=False",
+      "keep": {
+        "ia_id": 2704,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1743,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 667,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3068,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1751,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 669,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.493 mixed=True",
+      "keep": {
+        "ia_id": 1753,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3198,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 696,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.238 mixed=True",
+      "keep": {
+        "ia_id": 1758,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3199,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 714,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3069,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 466,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 722,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3070,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1774,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 730,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.524 margin=0.379 mixed=False",
+      "keep": {
+        "ia_id": 2705,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1775,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 732,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.803 margin=0.569 mixed=False",
+      "keep": {
+        "ia_id": 3200,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1776,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 736,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.556 margin=0.273 mixed=False",
+      "keep": {
+        "ia_id": 3201,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1779,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 740,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.475 mixed=True",
+      "keep": {
+        "ia_id": 1782,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3202,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 741,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.442 mixed=True",
+      "keep": {
+        "ia_id": 1783,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3004,
+          "name": "ZY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 742,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3071,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1784,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 743,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3072,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1785,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 746,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.707 margin=0.450 mixed=False",
+      "keep": {
+        "ia_id": 3005,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1788,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 747,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.816 margin=0.621 mixed=False",
+      "keep": {
+        "ia_id": 3203,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1789,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 753,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.346 mixed=True",
+      "keep": {
+        "ia_id": 1793,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3204,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 754,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.502 margin=0.209 mixed=False",
+      "keep": {
+        "ia_id": 3205,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1794,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 756,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.540 margin=0.263 mixed=False",
+      "keep": {
+        "ia_id": 3206,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1796,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 757,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.557 mixed=True",
+      "keep": {
+        "ia_id": 1797,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3006,
+          "name": "ZY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 758,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3073,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1798,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 759,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.722 margin=0.570 mixed=False",
+      "keep": {
+        "ia_id": 3207,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1799,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 760,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.726 margin=0.492 mixed=False",
+      "keep": {
+        "ia_id": 3007,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1800,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 761,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.733 margin=0.547 mixed=False",
+      "keep": {
+        "ia_id": 3208,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1801,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 762,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.720 margin=0.512 mixed=False",
+      "keep": {
+        "ia_id": 3008,
+        "name": "ZY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1802,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 765,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3074,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 507,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 766,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3075,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1803,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 770,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.601 margin=0.379 mixed=False",
+      "keep": {
+        "ia_id": 3209,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1805,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 771,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3076,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1806,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 773,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.709 margin=0.516 mixed=False",
+      "keep": {
+        "ia_id": 3210,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1807,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 797,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.511 margin=0.171 mixed=False",
+      "keep": {
+        "ia_id": 3211,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1817,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 798,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.819 margin=0.609 mixed=False",
+      "keep": {
+        "ia_id": 2917,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1818,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 800,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3077,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1820,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 801,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3078,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1821,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 802,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3079,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 533,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 806,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3080,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 537,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 807,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.819 margin=0.589 mixed=False",
+      "keep": {
+        "ia_id": 2918,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1825,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 815,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.646 margin=0.436 mixed=False",
+      "keep": {
+        "ia_id": 3212,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1827,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 816,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.361 mixed=True",
+      "keep": {
+        "ia_id": 1828,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2706,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 824,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.170 mixed=True",
+      "keep": {
+        "ia_id": 1832,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3213,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 834,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.243 mixed=True",
+      "keep": {
+        "ia_id": 1837,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2707,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 844,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.121 mixed=True",
+      "keep": {
+        "ia_id": 1839,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3214,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 854,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.216 mixed=True",
+      "keep": {
+        "ia_id": 1847,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3215,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 870,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.334 mixed=True",
+      "keep": {
+        "ia_id": 1854,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2708,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 878,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.766 mixed=True",
+      "keep": {
+        "ia_id": 1855,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3216,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 887,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.475 mixed=True",
+      "keep": {
+        "ia_id": 1856,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2709,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 894,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 2804,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1857,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 895,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 2805,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1858,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 898,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 2806,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1861,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 899,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 2807,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1862,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 902,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 2808,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1865,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 908,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 2809,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1870,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 909,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.669 margin=0.406 mixed=False",
+      "keep": {
+        "ia_id": 2919,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1871,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 913,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.747 mixed=True",
+      "keep": {
+        "ia_id": 1873,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2920,
+          "name": "DOCTOR",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 917,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.446 mixed=True",
+      "keep": {
+        "ia_id": 1876,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2710,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 918,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3081,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1877,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 920,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.619 margin=0.401 mixed=False",
+      "keep": {
+        "ia_id": 3217,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1878,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 924,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.315 mixed=False",
+      "keep": {
+        "ia_id": 1879,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2711,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 925,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.610 margin=0.369 mixed=False",
+      "keep": {
+        "ia_id": 3218,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1880,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 927,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.333 mixed=False",
+      "keep": {
+        "ia_id": 1881,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2712,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 928,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3082,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1882,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 929,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.612 margin=0.389 mixed=False",
+      "keep": {
+        "ia_id": 3219,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1883,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 930,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.320 mixed=False",
+      "keep": {
+        "ia_id": 1884,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2713,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 931,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3083,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1885,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 933,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.460 margin=0.226 mixed=False",
+      "keep": {
+        "ia_id": 2714,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1887,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 935,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.581 margin=0.410 mixed=False",
+      "keep": {
+        "ia_id": 3220,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1888,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 937,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.198 mixed=False",
+      "keep": {
+        "ia_id": 1889,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2715,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 938,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.419 margin=0.140 mixed=False",
+      "keep": {
+        "ia_id": 3221,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1890,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 939,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.480 margin=0.245 mixed=False",
+      "keep": {
+        "ia_id": 3222,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1891,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 941,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3084,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 619,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 942,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.346 mixed=True",
+      "keep": {
+        "ia_id": 1892,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 2716,
+          "name": "lw",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 944,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.634 margin=0.334 mixed=False",
+      "keep": {
+        "ia_id": 3223,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1894,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 945,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3085,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1895,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 948,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.564 margin=0.358 mixed=False",
+      "keep": {
+        "ia_id": 3224,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1897,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 953,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.821 margin=0.606 mixed=False",
+      "keep": {
+        "ia_id": 2921,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1900,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 955,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.859 margin=0.636 mixed=False",
+      "keep": {
+        "ia_id": 2922,
+        "name": "DOCTOR",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1901,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 957,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.685 margin=0.483 mixed=False",
+      "keep": {
+        "ia_id": 3225,
+        "name": "SMY",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1902,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 959,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.493 mixed=True",
+      "keep": {
+        "ia_id": 1903,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3226,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 961,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.950 margin=0.000 mixed=False",
+      "keep": {
+        "ia_id": 2718,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1904,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 968,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.411 margin=0.254 mixed=False",
+      "keep": {
+        "ia_id": 2719,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 636,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 971,
+      "decision": "dedupe_unknown",
+      "reason": "multi_unknown",
+      "keep": {
+        "ia_id": 3086,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 1906,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 972,
+      "decision": "keep_named_drop_unknown",
+      "reason": "sim=0.950 margin=0.000 mixed=False",
+      "keep": {
+        "ia_id": 2720,
+        "name": "lw",
+        "source": "clustering_v2",
+        "status": "auto_assigned"
+      },
+      "drop": [
+        {
+          "ia_id": 1907,
+          "name": "Unknown",
+          "source": "manual",
+          "status": "confirmed"
+        }
+      ]
+    },
+    {
+      "tracklet_id": 984,
+      "decision": "keep_unknown_drop_named",
+      "reason": "named_sim_weak=0.064 mixed=False",
+      "keep": {
+        "ia_id": 1913,
+        "name": "Unknown",
+        "source": "manual",
+        "status": "confirmed"
+      },
+      "drop": [
+        {
+          "ia_id": 3227,
+          "name": "SMY",
+          "source": "clustering_v2",
+          "status": "auto_assigned"
+        }
+      ]
+    }
+  ],
+  "safe_moves": [],
+  "suggestions_top": [
+    {
+      "tracklet_id": 1284,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.7747,
+      "margin": 0.4471,
+      "obs_id": 79068,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_653/crops/face_090199.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 388,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.752,
+      "margin": 0.5494,
+      "obs_id": 23385,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_250/crops/face_034070.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 2038,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.7505,
+      "margin": 0.5157,
+      "obs_id": 147582,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1054/crops/face_152920.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1988,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.7044,
+      "margin": 0.4972,
+      "obs_id": 144007,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1030/crops/face_148699.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 203,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.6822,
+      "margin": 0.3875,
+      "obs_id": 13925,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_150/crops/face_021024.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1978,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.6728,
+      "margin": 0.4464,
+      "obs_id": 142452,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1023/crops/face_146942.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1200,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.671,
+      "margin": 0.4307,
+      "obs_id": 68773,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_594/crops/face_078201.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 2039,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.6684,
+      "margin": 0.439,
+      "obs_id": 147750,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1054/crops/face_152920.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 901,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.6484,
+      "margin": 0.3631,
+      "obs_id": 48860,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_435/crops/face_058236.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1184,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.6462,
+      "margin": 0.4687,
+      "obs_id": 67696,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_588/crops/face_077325.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1362,
+      "suggested_character_id": 31,
+      "suggested_name": "mbq",
+      "sim": 0.6419,
+      "margin": 0.4239,
+      "obs_id": 86407,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_705/crops/face_097569.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1624,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.634,
+      "margin": 0.4378,
+      "obs_id": 105782,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_841/crops/face_120515.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1731,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.6299,
+      "margin": 0.4534,
+      "obs_id": 118204,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_926/crops/face_133542.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1294,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.624,
+      "margin": 0.3348,
+      "obs_id": 80381,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_659/crops/face_091288.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 900,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.616,
+      "margin": 0.3027,
+      "obs_id": 48846,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_435/crops/face_058228.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1601,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.6142,
+      "margin": 0.3677,
+      "obs_id": 104348,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_833/crops/face_119388.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1734,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.6118,
+      "margin": 0.433,
+      "obs_id": 118404,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_928/crops/face_133741.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1735,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5997,
+      "margin": 0.445,
+      "obs_id": 118456,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_928/crops/face_133717.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1924,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5924,
+      "margin": 0.264,
+      "obs_id": 137346,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_997/crops/face_141983.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1679,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5875,
+      "margin": 0.329,
+      "obs_id": 111330,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_884/crops/face_126385.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1242,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5872,
+      "margin": 0.2652,
+      "obs_id": 73016,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_626/crops/face_083034.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1183,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5818,
+      "margin": 0.4225,
+      "obs_id": 67616,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_588/crops/face_077349.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1241,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5817,
+      "margin": 0.2629,
+      "obs_id": 72745,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_626/crops/face_083017.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 947,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5743,
+      "margin": 0.3562,
+      "obs_id": 51805,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_460/crops/face_060498.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1349,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5738,
+      "margin": 0.3706,
+      "obs_id": 84291,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_691/crops/face_094678.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1352,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5644,
+      "margin": 0.3443,
+      "obs_id": 84976,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_694/crops/face_095363.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1093,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5621,
+      "margin": 0.427,
+      "obs_id": 59274,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_523/crops/face_068161.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1314,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.559,
+      "margin": 0.329,
+      "obs_id": 81385,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_672/crops/face_092619.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1315,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5569,
+      "margin": 0.3045,
+      "obs_id": 81428,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_672/crops/face_092631.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1159,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5491,
+      "margin": 0.2779,
+      "obs_id": 65372,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_573/crops/face_075318.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 403,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5472,
+      "margin": 0.3722,
+      "obs_id": 24178,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_256/crops/face_034988.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1092,
+      "suggested_character_id": 36,
+      "suggested_name": "lw",
+      "sim": 0.5457,
+      "margin": 0.4553,
+      "obs_id": 59229,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_522/crops/face_068116.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 950,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.544,
+      "margin": 0.3597,
+      "obs_id": 52035,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_461/crops/face_060781.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1117,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.543,
+      "margin": 0.3997,
+      "obs_id": 61553,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_544/crops/face_070815.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 406,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5382,
+      "margin": 0.3177,
+      "obs_id": 24335,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_259/crops/face_035190.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1129,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.538,
+      "margin": 0.2522,
+      "obs_id": 62236,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_551/crops/face_072389.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1111,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5378,
+      "margin": 0.3831,
+      "obs_id": 60943,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_538/crops/face_069989.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 68,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5372,
+      "margin": 0.2457,
+      "obs_id": 7170,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_035/crops/face_009134.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1304,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5364,
+      "margin": 0.2747,
+      "obs_id": 81348,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_667/crops/face_092417.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1974,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5339,
+      "margin": 0.3854,
+      "obs_id": 141667,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1020/crops/face_146256.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 250,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.53,
+      "margin": 0.3107,
+      "obs_id": 15089,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_183/crops/face_024119.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1054,
+      "suggested_character_id": 36,
+      "suggested_name": "lw",
+      "sim": 0.5242,
+      "margin": 0.3806,
+      "obs_id": 57526,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_513/crops/face_067262.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 979,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5238,
+      "margin": 0.3136,
+      "obs_id": 53479,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_480/crops/face_063464.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1175,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5184,
+      "margin": 0.3499,
+      "obs_id": 67317,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_583/crops/face_076983.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 2017,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5172,
+      "margin": 0.2786,
+      "obs_id": 146469,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1047/crops/face_152353.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 90,
+      "suggested_character_id": 36,
+      "suggested_name": "lw",
+      "sim": 0.5127,
+      "margin": 0.3282,
+      "obs_id": 7893,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_063/crops/face_010966.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 95,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5097,
+      "margin": 0.2986,
+      "obs_id": 8349,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_068/crops/face_011392.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 2016,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5069,
+      "margin": 0.272,
+      "obs_id": 146356,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1047/crops/face_152353.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1301,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5052,
+      "margin": 0.252,
+      "obs_id": 81099,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_663/crops/face_091831.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 755,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5038,
+      "margin": 0.214,
+      "obs_id": 40611,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_385/crops/face_050138.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1748,
+      "suggested_character_id": 36,
+      "suggested_name": "lw",
+      "sim": 0.5016,
+      "margin": 0.3139,
+      "obs_id": 119754,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_936/crops/face_134819.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 356,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4967,
+      "margin": 0.2969,
+      "obs_id": 19237,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_234/crops/face_031470.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 409,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.4961,
+      "margin": 0.2767,
+      "obs_id": 24564,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_261/crops/face_035361.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 91,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.4953,
+      "margin": 0.1952,
+      "obs_id": 8012,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_063/crops/face_010970.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1946,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4867,
+      "margin": 0.19,
+      "obs_id": 139140,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1006/crops/face_143220.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1191,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4848,
+      "margin": 0.3317,
+      "obs_id": 68308,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_591/crops/face_077876.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 152,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.4814,
+      "margin": 0.2264,
+      "obs_id": 11308,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_102/crops/face_013604.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1763,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4796,
+      "margin": 0.2482,
+      "obs_id": 120757,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_947/crops/face_136207.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1809,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4767,
+      "margin": 0.1778,
+      "obs_id": 127152,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_957/crops/face_137758.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 265,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.4685,
+      "margin": 0.29,
+      "obs_id": 15239,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_193/crops/face_024682.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1747,
+      "suggested_character_id": 36,
+      "suggested_name": "lw",
+      "sim": 0.4664,
+      "margin": 0.3116,
+      "obs_id": 119632,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_936/crops/face_134799.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1604,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.46,
+      "margin": 0.2604,
+      "obs_id": 104585,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_834/crops/face_119468.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1603,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4552,
+      "margin": 0.2546,
+      "obs_id": 104528,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_834/crops/face_119469.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 779,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4497,
+      "margin": 0.1906,
+      "obs_id": 42677,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_402/crops/face_052941.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 104,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.4467,
+      "margin": 0.3415,
+      "obs_id": 8819,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_075/crops/face_011945.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1915,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4446,
+      "margin": 0.1908,
+      "obs_id": 137124,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_990/crops/face_141662.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1838,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4422,
+      "margin": 0.2571,
+      "obs_id": 129841,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_966/crops/face_138442.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1876,
+      "suggested_character_id": 31,
+      "suggested_name": "mbq",
+      "sim": 0.4412,
+      "margin": 0.2473,
+      "obs_id": 133891,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_972/crops/face_139485.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 980,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4397,
+      "margin": 0.2072,
+      "obs_id": 53617,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_480/crops/face_063554.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1131,
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.4394,
+      "margin": 0.2261,
+      "obs_id": 62481,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_553/crops/face_072634.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1672,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4295,
+      "margin": 0.2558,
+      "obs_id": 110824,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_874/crops/face_125282.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 937,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4261,
+      "margin": 0.1462,
+      "obs_id": 51372,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_452/crops/face_059872.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1264,
+      "suggested_character_id": 36,
+      "suggested_name": "lw",
+      "sim": 0.4258,
+      "margin": 0.27,
+      "obs_id": 76491,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_638/crops/face_086564.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 932,
+      "suggested_character_id": 36,
+      "suggested_name": "lw",
+      "sim": 0.4227,
+      "margin": 0.1995,
+      "obs_id": 50974,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_450/crops/face_059631.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1267,
+      "suggested_character_id": 36,
+      "suggested_name": "lw",
+      "sim": 0.4171,
+      "margin": 0.2282,
+      "obs_id": 77166,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_640/crops/face_087094.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1388,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4171,
+      "margin": 0.1709,
+      "obs_id": 90054,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_736/crops/face_105083.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 656,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4153,
+      "margin": 0.1241,
+      "obs_id": 36494,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_363/crops/face_048071.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1147,
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.4144,
+      "margin": 0.1434,
+      "obs_id": 64328,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_564/crops/face_074239.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1737,
+      "suggested_character_id": 31,
+      "suggested_name": "mbq",
+      "sim": 0.4116,
+      "margin": 0.1026,
+      "obs_id": 118823,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_929/crops/face_134021.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "tracklet_id": 1402,
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.4033,
+      "margin": 0.2297,
+      "obs_id": 93849,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_748/crops/face_110230.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    }
+  ],
+  "wrong_flags": [
+    {
+      "tracklet_id": 2022,
+      "current": "SMY",
+      "own_sim": 0.1297,
+      "better": "DOCTOR",
+      "better_sim": 0.4283,
+      "margin": 0.1974,
+      "tag": "auto_possible_wrong",
+      "source": "automatic_cluster",
+      "status": "confirmed",
+      "ia_id": 2624,
+      "mixed": 0
+    }
+  ],
+  "mixed_named": [
+    {
+      "tracklet_id": 1467,
+      "name": "ZY",
+      "pmin": -0.026416854932904243,
+      "source": "automatic_cluster",
+      "status": "pending"
+    },
+    {
+      "tracklet_id": 1476,
+      "name": "ZY",
+      "pmin": 0.0018334286287426949,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 1477,
+      "name": "ZY",
+      "pmin": -0.011801459826529026,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 1479,
+      "name": "ZY",
+      "pmin": 0.03962769731879234,
+      "source": "automatic_cluster",
+      "status": "pending"
+    },
+    {
+      "tracklet_id": 1571,
+      "name": "SMY",
+      "pmin": 0.02104140818119049,
+      "source": "manual",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 1572,
+      "name": "SMY",
+      "pmin": 0.022728286683559418,
+      "source": "manual",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 2027,
+      "name": "DOCTOR",
+      "pmin": -0.03138606250286102,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 2028,
+      "name": "DOCTOR",
+      "pmin": -0.03138606250286102,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 2049,
+      "name": "DOCTOR",
+      "pmin": -0.03935886174440384,
+      "source": "manual",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 2050,
+      "name": "mbq",
+      "pmin": -0.02664642222225666,
+      "source": "manual",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 2051,
+      "name": "DOCTOR",
+      "pmin": -0.03428785130381584,
+      "source": "automatic_cluster",
+      "status": "pending"
+    },
+    {
+      "tracklet_id": 2052,
+      "name": "mbq",
+      "pmin": -0.03428785130381584,
+      "source": "manual",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 2053,
+      "name": "DOCTOR",
+      "pmin": -0.023850485682487488,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 2057,
+      "name": "SMY",
+      "pmin": 0.2130136787891388,
+      "source": "automatic_cluster",
+      "status": "pending"
+    },
+    {
+      "tracklet_id": 2069,
+      "name": "DOCTOR",
+      "pmin": -0.003962446004152298,
+      "source": "clustering_v2",
+      "status": "auto_assigned"
+    },
+    {
+      "tracklet_id": 2070,
+      "name": "mbq",
+      "pmin": -0.007732716389000416,
+      "source": "clustering_v2",
+      "status": "auto_assigned"
+    },
+    {
+      "tracklet_id": 2071,
+      "name": "SMY",
+      "pmin": 0.026991650462150574,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 2072,
+      "name": "SMY",
+      "pmin": 0.03202058747410774,
+      "source": "automatic_cluster",
+      "status": "pending"
+    },
+    {
+      "tracklet_id": 2073,
+      "name": "SMY",
+      "pmin": 0.03621382266283035,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 2082,
+      "name": "ZY",
+      "pmin": -0.056828662753105164,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "tracklet_id": 2085,
+      "name": "DOCTOR",
+      "pmin": -0.010763481259346008,
+      "source": "clustering_v2",
+      "status": "auto_assigned"
+    },
+    {
+      "tracklet_id": 2086,
+      "name": "SMY",
+      "pmin": 0.14954209327697754,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    }
+  ],
+  "qc_manifest": [
+    {
+      "bucket": "possible_wrong",
+      "tracklet_id": 2022,
+      "obs_id": 146567,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1049/crops/face_152455.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/possible_wrong/t2022_o146567_face_152455.jpg",
+      "current": "SMY",
+      "own_sim": 0.1297,
+      "better": "DOCTOR",
+      "better_sim": 0.4283,
+      "margin": 0.1974,
+      "tag": "auto_possible_wrong",
+      "source": "automatic_cluster",
+      "status": "confirmed",
+      "ia_id": 2624,
+      "mixed": 0
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2082,
+      "obs_id": 151100,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1066/crops/face_154151.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2082_o151100_face_154151.jpg",
+      "name": "ZY",
+      "pmin": -0.056828662753105164,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2049,
+      "obs_id": 148649,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1057/crops/face_153348.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2049_o148649_face_153348.jpg",
+      "name": "DOCTOR",
+      "pmin": -0.03935886174440384,
+      "source": "manual",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2051,
+      "obs_id": 149010,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1057/crops/face_153348.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2051_o149010_face_153348.jpg",
+      "name": "DOCTOR",
+      "pmin": -0.03428785130381584,
+      "source": "automatic_cluster",
+      "status": "pending"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2052,
+      "obs_id": 149138,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1057/crops/face_153340.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2052_o149138_face_153340.jpg",
+      "name": "mbq",
+      "pmin": -0.03428785130381584,
+      "source": "manual",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2027,
+      "obs_id": 146769,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1051/crops/face_152605.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2027_o146769_face_152605.jpg",
+      "name": "DOCTOR",
+      "pmin": -0.03138606250286102,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2028,
+      "obs_id": 146834,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1051/crops/face_152605.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2028_o146834_face_152605.jpg",
+      "name": "DOCTOR",
+      "pmin": -0.03138606250286102,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2050,
+      "obs_id": 148796,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1057/crops/face_153312.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2050_o148796_face_153312.jpg",
+      "name": "mbq",
+      "pmin": -0.02664642222225666,
+      "source": "manual",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 1467,
+      "obs_id": 98096,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_781/crops/face_113479.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t1467_o98096_face_113479.jpg",
+      "name": "ZY",
+      "pmin": -0.026416854932904243,
+      "source": "automatic_cluster",
+      "status": "pending"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2053,
+      "obs_id": 149331,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1057/crops/face_153420.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2053_o149331_face_153420.jpg",
+      "name": "DOCTOR",
+      "pmin": -0.023850485682487488,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 1477,
+      "obs_id": 98242,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_783/crops/face_113649.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t1477_o98242_face_113649.jpg",
+      "name": "ZY",
+      "pmin": -0.011801459826529026,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2085,
+      "obs_id": 151281,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1067/crops/face_154329.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2085_o151281_face_154329.jpg",
+      "name": "DOCTOR",
+      "pmin": -0.010763481259346008,
+      "source": "clustering_v2",
+      "status": "auto_assigned"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2070,
+      "obs_id": 150207,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1062/crops/face_153836.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2070_o150207_face_153836.jpg",
+      "name": "mbq",
+      "pmin": -0.007732716389000416,
+      "source": "clustering_v2",
+      "status": "auto_assigned"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2069,
+      "obs_id": 150168,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1062/crops/face_153852.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2069_o150168_face_153852.jpg",
+      "name": "DOCTOR",
+      "pmin": -0.003962446004152298,
+      "source": "clustering_v2",
+      "status": "auto_assigned"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 1476,
+      "obs_id": 98238,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_783/crops/face_113650.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t1476_o98238_face_113650.jpg",
+      "name": "ZY",
+      "pmin": 0.0018334286287426949,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 1571,
+      "obs_id": 102222,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_814/crops/face_117462.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t1571_o102222_face_117462.jpg",
+      "name": "SMY",
+      "pmin": 0.02104140818119049,
+      "source": "manual",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 1572,
+      "obs_id": 102258,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_814/crops/face_117450.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t1572_o102258_face_117450.jpg",
+      "name": "SMY",
+      "pmin": 0.022728286683559418,
+      "source": "manual",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2071,
+      "obs_id": 150314,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1062/crops/face_153888.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2071_o150314_face_153888.jpg",
+      "name": "SMY",
+      "pmin": 0.026991650462150574,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2072,
+      "obs_id": 150347,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1062/crops/face_153888.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2072_o150347_face_153888.jpg",
+      "name": "SMY",
+      "pmin": 0.03202058747410774,
+      "source": "automatic_cluster",
+      "status": "pending"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 2073,
+      "obs_id": 150386,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1062/crops/face_153890.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t2073_o150386_face_153890.jpg",
+      "name": "SMY",
+      "pmin": 0.03621382266283035,
+      "source": "automatic_cluster",
+      "status": "confirmed"
+    },
+    {
+      "bucket": "mixed_named",
+      "tracklet_id": 1479,
+      "obs_id": 98257,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_783/crops/face_113653.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/mixed_named/t1479_o98257_face_113653.jpg",
+      "name": "ZY",
+      "pmin": 0.03962769731879234,
+      "source": "automatic_cluster",
+      "status": "pending"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1284,
+      "obs_id": 79068,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_653/crops/face_090199.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1284_o79068_face_090199.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.7747,
+      "margin": 0.4471,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_653/crops/face_090199.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 388,
+      "obs_id": 23385,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_250/crops/face_034070.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t388_o23385_face_034070.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.752,
+      "margin": 0.5494,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_250/crops/face_034070.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 2038,
+      "obs_id": 147582,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1054/crops/face_152920.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t2038_o147582_face_152920.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.7505,
+      "margin": 0.5157,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1054/crops/face_152920.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1988,
+      "obs_id": 144007,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1030/crops/face_148699.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1988_o144007_face_148699.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.7044,
+      "margin": 0.4972,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1030/crops/face_148699.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 203,
+      "obs_id": 13925,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_150/crops/face_021024.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t203_o13925_face_021024.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.6822,
+      "margin": 0.3875,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_150/crops/face_021024.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1978,
+      "obs_id": 142452,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1023/crops/face_146942.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1978_o142452_face_146942.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.6728,
+      "margin": 0.4464,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1023/crops/face_146942.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1200,
+      "obs_id": 68773,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_594/crops/face_078201.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1200_o68773_face_078201.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.671,
+      "margin": 0.4307,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_594/crops/face_078201.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 2039,
+      "obs_id": 147750,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1054/crops/face_152920.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t2039_o147750_face_152920.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.6684,
+      "margin": 0.439,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1054/crops/face_152920.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 901,
+      "obs_id": 48860,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_435/crops/face_058236.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t901_o48860_face_058236.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.6484,
+      "margin": 0.3631,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_435/crops/face_058236.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1184,
+      "obs_id": 67696,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_588/crops/face_077325.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1184_o67696_face_077325.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.6462,
+      "margin": 0.4687,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_588/crops/face_077325.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1362,
+      "obs_id": 86407,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_705/crops/face_097569.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1362_o86407_face_097569.jpg",
+      "suggested_character_id": 31,
+      "suggested_name": "mbq",
+      "sim": 0.6419,
+      "margin": 0.4239,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_705/crops/face_097569.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1624,
+      "obs_id": 105782,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_841/crops/face_120515.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1624_o105782_face_120515.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.634,
+      "margin": 0.4378,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_841/crops/face_120515.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1731,
+      "obs_id": 118204,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_926/crops/face_133542.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1731_o118204_face_133542.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.6299,
+      "margin": 0.4534,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_926/crops/face_133542.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1294,
+      "obs_id": 80381,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_659/crops/face_091288.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1294_o80381_face_091288.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.624,
+      "margin": 0.3348,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_659/crops/face_091288.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 900,
+      "obs_id": 48846,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_435/crops/face_058228.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t900_o48846_face_058228.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.616,
+      "margin": 0.3027,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_435/crops/face_058228.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1601,
+      "obs_id": 104348,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_833/crops/face_119388.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1601_o104348_face_119388.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.6142,
+      "margin": 0.3677,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_833/crops/face_119388.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1734,
+      "obs_id": 118404,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_928/crops/face_133741.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1734_o118404_face_133741.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.6118,
+      "margin": 0.433,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_928/crops/face_133741.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1735,
+      "obs_id": 118456,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_928/crops/face_133717.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1735_o118456_face_133717.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5997,
+      "margin": 0.445,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_928/crops/face_133717.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1924,
+      "obs_id": 137346,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_997/crops/face_141983.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1924_o137346_face_141983.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5924,
+      "margin": 0.264,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_997/crops/face_141983.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1679,
+      "obs_id": 111330,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_884/crops/face_126385.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1679_o111330_face_126385.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5875,
+      "margin": 0.329,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_884/crops/face_126385.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1242,
+      "obs_id": 73016,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_626/crops/face_083034.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1242_o73016_face_083034.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5872,
+      "margin": 0.2652,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_626/crops/face_083034.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1183,
+      "obs_id": 67616,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_588/crops/face_077349.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1183_o67616_face_077349.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5818,
+      "margin": 0.4225,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_588/crops/face_077349.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1241,
+      "obs_id": 72745,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_626/crops/face_083017.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1241_o72745_face_083017.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5817,
+      "margin": 0.2629,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_626/crops/face_083017.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 947,
+      "obs_id": 51805,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_460/crops/face_060498.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t947_o51805_face_060498.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5743,
+      "margin": 0.3562,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_460/crops/face_060498.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1349,
+      "obs_id": 84291,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_691/crops/face_094678.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1349_o84291_face_094678.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5738,
+      "margin": 0.3706,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_691/crops/face_094678.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1352,
+      "obs_id": 84976,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_694/crops/face_095363.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1352_o84976_face_095363.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5644,
+      "margin": 0.3443,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_694/crops/face_095363.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1093,
+      "obs_id": 59274,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_523/crops/face_068161.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1093_o59274_face_068161.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5621,
+      "margin": 0.427,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_523/crops/face_068161.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1314,
+      "obs_id": 81385,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_672/crops/face_092619.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1314_o81385_face_092619.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.559,
+      "margin": 0.329,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_672/crops/face_092619.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1315,
+      "obs_id": 81428,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_672/crops/face_092631.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1315_o81428_face_092631.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5569,
+      "margin": 0.3045,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_672/crops/face_092631.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1159,
+      "obs_id": 65372,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_573/crops/face_075318.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1159_o65372_face_075318.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5491,
+      "margin": 0.2779,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_573/crops/face_075318.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 403,
+      "obs_id": 24178,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_256/crops/face_034988.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t403_o24178_face_034988.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5472,
+      "margin": 0.3722,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_256/crops/face_034988.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1092,
+      "obs_id": 59229,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_522/crops/face_068116.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1092_o59229_face_068116.jpg",
+      "suggested_character_id": 36,
+      "suggested_name": "lw",
+      "sim": 0.5457,
+      "margin": 0.4553,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_522/crops/face_068116.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 950,
+      "obs_id": 52035,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_461/crops/face_060781.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t950_o52035_face_060781.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.544,
+      "margin": 0.3597,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_461/crops/face_060781.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1117,
+      "obs_id": 61553,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_544/crops/face_070815.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1117_o61553_face_070815.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.543,
+      "margin": 0.3997,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_544/crops/face_070815.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 406,
+      "obs_id": 24335,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_259/crops/face_035190.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t406_o24335_face_035190.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5382,
+      "margin": 0.3177,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_259/crops/face_035190.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1129,
+      "obs_id": 62236,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_551/crops/face_072389.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1129_o62236_face_072389.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.538,
+      "margin": 0.2522,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_551/crops/face_072389.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1111,
+      "obs_id": 60943,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_538/crops/face_069989.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1111_o60943_face_069989.jpg",
+      "suggested_character_id": 30,
+      "suggested_name": "DOCTOR",
+      "sim": 0.5378,
+      "margin": 0.3831,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_538/crops/face_069989.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 68,
+      "obs_id": 7170,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_035/crops/face_009134.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t68_o7170_face_009134.jpg",
+      "suggested_character_id": 25,
+      "suggested_name": "ZY",
+      "sim": 0.5372,
+      "margin": 0.2457,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_035/crops/face_009134.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1304,
+      "obs_id": 81348,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_667/crops/face_092417.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1304_o81348_face_092417.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5364,
+      "margin": 0.2747,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_667/crops/face_092417.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "unknown_suggest",
+      "tracklet_id": 1974,
+      "obs_id": 141667,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1020/crops/face_146256.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/unknown_suggest/t1974_o141667_face_146256.jpg",
+      "suggested_character_id": 27,
+      "suggested_name": "SMY",
+      "sim": 0.5339,
+      "margin": 0.3854,
+      "crop": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1020/crops/face_146256.jpg",
+      "locked_source": "manual",
+      "locked_status": "confirmed"
+    },
+    {
+      "bucket": "ref_SMY",
+      "tracklet_id": 2083,
+      "obs_id": 151182,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1066/crops/face_154220.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_SMY/t2083_o151182_face_154220.jpg",
+      "character": "SMY"
+    },
+    {
+      "bucket": "ref_SMY",
+      "tracklet_id": 2025,
+      "obs_id": 146668,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1049/crops/face_152500.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_SMY/t2025_o146668_face_152500.jpg",
+      "character": "SMY"
+    },
+    {
+      "bucket": "ref_SMY",
+      "tracklet_id": 1636,
+      "obs_id": 106869,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_850/crops/face_123448.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_SMY/t1636_o106869_face_123448.jpg",
+      "character": "SMY"
+    },
+    {
+      "bucket": "ref_ZY",
+      "tracklet_id": 1478,
+      "obs_id": 98255,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_783/crops/face_113653.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_ZY/t1478_o98255_face_113653.jpg",
+      "character": "ZY"
+    },
+    {
+      "bucket": "ref_ZY",
+      "tracklet_id": 1473,
+      "obs_id": 98113,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_781/crops/face_113484.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_ZY/t1473_o98113_face_113484.jpg",
+      "character": "ZY"
+    },
+    {
+      "bucket": "ref_ZY",
+      "tracklet_id": 1470,
+      "obs_id": 98104,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_781/crops/face_113473.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_ZY/t1470_o98104_face_113473.jpg",
+      "character": "ZY"
+    },
+    {
+      "bucket": "ref_lw",
+      "tracklet_id": 968,
+      "obs_id": 53095,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_476/crops/face_063283.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_lw/t968_o53095_face_063283.jpg",
+      "character": "lw"
+    },
+    {
+      "bucket": "ref_lw",
+      "tracklet_id": 1055,
+      "obs_id": 57608,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_513/crops/face_067285.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_lw/t1055_o57608_face_067285.jpg",
+      "character": "lw"
+    },
+    {
+      "bucket": "ref_lw",
+      "tracklet_id": 1053,
+      "obs_id": 57468,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_512/crops/face_067204.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_lw/t1053_o57468_face_067204.jpg",
+      "character": "lw"
+    },
+    {
+      "bucket": "ref_mbq",
+      "tracklet_id": 1587,
+      "obs_id": 103396,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_820/crops/face_118005.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_mbq/t1587_o103396_face_118005.jpg",
+      "character": "mbq"
+    },
+    {
+      "bucket": "ref_mbq",
+      "tracklet_id": 1370,
+      "obs_id": 87729,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_713/crops/face_098899.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_mbq/t1370_o87729_face_098899.jpg",
+      "character": "mbq"
+    },
+    {
+      "bucket": "ref_mbq",
+      "tracklet_id": 1744,
+      "obs_id": 119385,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_933/crops/face_134546.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_mbq/t1744_o119385_face_134546.jpg",
+      "character": "mbq"
+    },
+    {
+      "bucket": "ref_DOCTOR",
+      "tracklet_id": 1984,
+      "obs_id": 143320,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_1027/crops/face_147797.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_DOCTOR/t1984_o143320_face_147797.jpg",
+      "character": "DOCTOR"
+    },
+    {
+      "bucket": "ref_DOCTOR",
+      "tracklet_id": 383,
+      "obs_id": 23088,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_248/crops/face_033858.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_DOCTOR/t383_o23088_face_033858.jpg",
+      "character": "DOCTOR"
+    },
+    {
+      "bucket": "ref_DOCTOR",
+      "tracklet_id": 1421,
+      "obs_id": 95622,
+      "src": "/home/ponky_re6000/character-identity-board-data/projects/15/analysis/video_15/shot_763/crops/face_111763.jpg",
+      "dest": "/home/ponky_re6000/character-identity-board/reports/v03_recovery/delivery_qc/ref_DOCTOR/t1421_o95622_face_111763.jpg",
+      "character": "DOCTOR"
+    }
+  ]
+}

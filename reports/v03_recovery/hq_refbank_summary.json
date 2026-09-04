@@ -1,0 +1,163 @@
+{
+  "ref_bank": {
+    "SMY": 40,
+    "ZY": 40,
+    "lw": 40,
+    "mbq": 40,
+    "DOCTOR": 40
+  },
+  "suggestions_ge040": 63,
+  "suggestions_ge050": 19,
+  "wrong_flagged": 0,
+  "wrong_fixed_now": 0,
+  "dual_remaining": 0,
+  "counts": [
+    {
+      "name": "Unknown",
+      "n": 1180
+    },
+    {
+      "name": "SMY",
+      "n": 147
+    },
+    {
+      "name": "DOCTOR",
+      "n": 64
+    },
+    {
+      "name": "lw",
+      "n": 43
+    },
+    {
+      "name": "ZY",
+      "n": 42
+    },
+    {
+      "name": "mbq",
+      "n": 22
+    }
+  ],
+  "top_suggestions": [
+    {
+      "tid": 1601,
+      "to": "SMY",
+      "sim": 0.909,
+      "margin": 0.763,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 1284,
+      "to": "ZY",
+      "sim": 0.608,
+      "margin": 0.463,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 1624,
+      "to": "SMY",
+      "sim": 0.599,
+      "margin": 0.534,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 2038,
+      "to": "DOCTOR",
+      "sim": 0.599,
+      "margin": 0.413,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 1200,
+      "to": "ZY",
+      "sim": 0.593,
+      "margin": 0.473,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 203,
+      "to": "ZY",
+      "sim": 0.591,
+      "margin": 0.474,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 1092,
+      "to": "lw",
+      "sim": 0.572,
+      "margin": 0.452,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 1294,
+      "to": "SMY",
+      "sim": 0.548,
+      "margin": 0.391,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 1988,
+      "to": "ZY",
+      "sim": 0.546,
+      "margin": 0.434,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 1978,
+      "to": "DOCTOR",
+      "sim": 0.537,
+      "margin": 0.349,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 947,
+      "to": "SMY",
+      "sim": 0.535,
+      "margin": 0.41,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 2039,
+      "to": "DOCTOR",
+      "sim": 0.533,
+      "margin": 0.358,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 901,
+      "to": "DOCTOR",
+      "sim": 0.525,
+      "margin": 0.338,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 900,
+      "to": "DOCTOR",
+      "sim": 0.52,
+      "margin": 0.309,
+      "src": "manual",
+      "st": "confirmed"
+    },
+    {
+      "tid": 979,
+      "to": "SMY",
+      "sim": 0.518,
+      "margin": 0.379,
+      "src": "manual",
+      "st": "confirmed"
+    }
+  ],
+  "wrong_sample": []
+}
