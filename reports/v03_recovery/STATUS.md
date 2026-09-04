@@ -1,19 +1,20 @@
-# CIB V0.3 STATUS — 2026-09-04 23:55:58 CST
+# CIB V0.3 STATUS — 2026-09-05 00:34:38 CST
 
-## Phase 4 — GPU re-embed (ACTIVE)
+## DONE
+- Phase 0 baseline
+- Phase 1 unknown audit
+- Phase 2 5-pt alignment
+- Phase 3 A/B PASS (sep 0.45→0.52, FAR@0.40 6.1%→3.1%)
+- **Phase 4 re-embed V2 COMPLETE** — film 85307/85307, fail=0, aligned 93.8%
+- **Phase 5 prototypes + contamination** — 1372 protos, mixed 384, Unknown recoverable@0.40 = 110 (NOT applied)
 
-- Runner: `scripts/phase4_reembed_v2_gpu.py` (single-process ORT CUDA)
-- Device: NVIDIA RTX A6000 via WSL
-- Providers: CUDAExecutionProvider + CPUExecutionProvider
-- Smoke: 200 faces @ ~25 faces/s, fail=0
-- Already in DB embedding_v2: ~10,933
-- Remain film active: ~74,374
-- ETA: ~50 min → **2026-09-05 00:45 CST**
-- Thresholds FROZEN: identity 0.40 / merge 0.50 / unknown 0.30
+## LOCKED
+- thresholds 0.40 / 0.50 / 0.30
+- no manual overwrite
+- no full recluster yet
 
-## Why not multi-process GPU
-ProcessPool workers hit `cudaError 100: no CUDA-capable device` on this host.
-Main-process + prep_cuda(LD_LIBRARY_PATH + torch touch) works.
-
-## Phase 3 PASS (locked)
-separation 0.451→0.519, FAR@0.40 6.1%→3.1%
+## NEXT
+- Phase 6 quality evidence gate
+- Phase 7 reference bank from locked pure tracklets
+- Phase 8 margin matching + calibration
+- Phase 9 safe reassignment (skip manual_locked)
