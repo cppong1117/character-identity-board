@@ -1,0 +1,299 @@
+{
+  "frozen_at": "2026-09-04T13:53:29.491758+00:00",
+  "git_head": "d4487806dc36d546ef642b96d5a27b72becb7e5f",
+  "git_short": "d448780",
+  "config_sha256": "9176d37c06367d38fe0274776d3a1dbac7215f946bb52103c22c41a605b225d2",
+  "face_engine_arcface_sha256": "9fa7f078ca35c222bb7a85af0c8b4ea8a2d71242cc05036572e6237d43f89836",
+  "db_path": "/home/ponky_re6000/character-identity-board-data/cib.sqlite3",
+  "db_size_bytes": 652156928,
+  "thresholds_frozen": {
+    "use_arcface": true,
+    "arcface_identity_threshold": 0.4,
+    "arcface_merge_threshold": 0.5,
+    "arcface_unknown_threshold": 0.3,
+    "min_face_size_px": 90,
+    "blur_threshold": 28.0,
+    "yunet_score_threshold": 0.5,
+    "note": "NO threshold changes in Phase 0-2"
+  },
+  "global": {
+    "total_observations": 156194,
+    "active_observations": 89272,
+    "excluded_observations": 66922,
+    "embedding_dims": [
+      [
+        512,
+        156194
+      ]
+    ],
+    "identity_evidence_allowed": [
+      [
+        0,
+        64441
+      ],
+      [
+        1,
+        91753
+      ]
+    ],
+    "exclude_reasons_top20": [
+      [
+        "blur_below_threshold",
+        15840
+      ],
+      [
+        "quality_below_0.6",
+        12505
+      ],
+      [
+        "very_blurry",
+        8847
+      ],
+      [
+        "false_positive_CL13",
+        2823
+      ],
+      [
+        "false_positive_CL02",
+        1067
+      ],
+      [
+        "false_positive_CL04",
+        687
+      ],
+      [
+        "Auto: size=3330B area=3976px",
+        250
+      ],
+      [
+        "VLM: the image is blurry and does not show any recognizable facial features",
+        201
+      ],
+      [
+        "VLM: The image is a blurry mess and does not show any recognizable facial features.",
+        151
+      ],
+      [
+        "non_frontal_yaw_gt_30",
+        120
+      ],
+      [
+        "batch excluded by user",
+        103
+      ],
+      [
+        "VLM: the image is a blurry mess and does not show any recognizable facial features",
+        98
+      ],
+      [
+        "VLM: the image is a blurry mess and does not show any recognizable features of a face",
+        92
+      ],
+      [
+        "low_quality_non_face",
+        72
+      ],
+      [
+        "high_occlusion",
+        26
+      ],
+      [
+        "Auto: size=2998B area=10323px",
+        24
+      ],
+      [
+        "Auto: size=2996B area=10323px",
+        24
+      ],
+      [
+        "Borderline: size=4959B area=10032px qs=0.7012272620371263",
+        23
+      ],
+      [
+        "Borderline: size=4959B area=10032px qs=0.6930196831609858",
+        20
+      ],
+      [
+        "Borderline: size=4959B area=10032px qs=0.6906579239156808",
+        20
+      ]
+    ]
+  },
+  "film": {
+    "project": {
+      "id": 15,
+      "name": "film",
+      "status": "has_video",
+      "settings": "{\"description\": \"\"}",
+      "created_at": "2026-08-28 11:37:19.011839",
+      "updated_at": "2026-08-28 11:41:19.097091"
+    },
+    "video": {
+      "id": 15,
+      "project_id": 15,
+      "filename": "c9bd3ce7_mirrored20260828 happy.mp4",
+      "filepath": "/home/ponky_re6000/character-identity-board-data/projects/15/videos/c9bd3ce7_mirrored20260828 happy.mp4",
+      "duration_s": 6556.791678,
+      "fps": 24.0,
+      "width": 1920,
+      "height": 1080,
+      "codec": "h264",
+      "frame_count": 157363,
+      "processing_status": "completed",
+      "pipeline_stage": "completed",
+      "error_stage": null,
+      "error_message": null,
+      "created_at": "2026-08-28 11:41:19.097999",
+      "updated_at": "2026-08-31 17:18:19.822357"
+    },
+    "shots": 1078,
+    "tracklets": 2074,
+    "observations_total": 149928,
+    "observations_excluded": 64621,
+    "observations_active": 85307,
+    "characters": [
+      {
+        "id": 20,
+        "display_name": "Unknown",
+        "character_code": "UNKNOWN",
+        "status": "unknown",
+        "n_tracklets": 1431,
+        "avg_conf": 0.9068102638150846,
+        "pending": 1,
+        "auto_a": 0,
+        "conf": 1644
+      },
+      {
+        "id": 27,
+        "display_name": "SMY",
+        "character_code": "CL08",
+        "status": "manual",
+        "n_tracklets": 205,
+        "avg_conf": 0.9432108400397852,
+        "pending": 13,
+        "auto_a": 170,
+        "conf": 23
+      },
+      {
+        "id": 30,
+        "display_name": "DOCTOR",
+        "character_code": "CL04",
+        "status": "manual",
+        "n_tracklets": 86,
+        "avg_conf": 0.9419540229885058,
+        "pending": 2,
+        "auto_a": 71,
+        "conf": 14
+      },
+      {
+        "id": 36,
+        "display_name": "lw",
+        "character_code": "CL00",
+        "status": "manual",
+        "n_tracklets": 78,
+        "avg_conf": 0.95,
+        "pending": 0,
+        "auto_a": 78,
+        "conf": 0
+      },
+      {
+        "id": 25,
+        "display_name": "ZY",
+        "character_code": "CL06",
+        "status": "manual",
+        "n_tracklets": 55,
+        "avg_conf": 0.9350296647505495,
+        "pending": 4,
+        "auto_a": 35,
+        "conf": 16
+      },
+      {
+        "id": 31,
+        "display_name": "mbq",
+        "character_code": "CL01",
+        "status": "manual",
+        "n_tracklets": 36,
+        "avg_conf": 0.9527777777777777,
+        "pending": 0,
+        "auto_a": 33,
+        "conf": 3
+      },
+      {
+        "id": 32,
+        "display_name": "Test Actor",
+        "character_code": "TEST",
+        "status": "manual",
+        "n_tracklets": 0,
+        "avg_conf": null,
+        "pending": 0,
+        "auto_a": 0,
+        "conf": 0
+      },
+      {
+        "id": 33,
+        "display_name": "SMY",
+        "character_code": "SMY",
+        "status": "manual",
+        "n_tracklets": 0,
+        "avg_conf": null,
+        "pending": 0,
+        "auto_a": 0,
+        "conf": 0
+      },
+      {
+        "id": 34,
+        "display_name": "\u9662\u957f",
+        "character_code": "\u9662\u957f",
+        "status": "manual",
+        "n_tracklets": 0,
+        "avg_conf": null,
+        "pending": 0,
+        "auto_a": 0,
+        "conf": 0
+      },
+      {
+        "id": 35,
+        "display_name": "LW",
+        "character_code": "LW",
+        "status": "manual",
+        "n_tracklets": 0,
+        "avg_conf": null,
+        "pending": 0,
+        "auto_a": 0,
+        "conf": 0
+      }
+    ],
+    "assignment_source_status": [
+      {
+        "source": "manual",
+        "status": "confirmed",
+        "n": 1629
+      },
+      {
+        "source": "clustering_v2",
+        "status": "auto_assigned",
+        "n": 387
+      },
+      {
+        "source": "automatic_cluster",
+        "status": "confirmed",
+        "n": 70
+      },
+      {
+        "source": "automatic_cluster",
+        "status": "pending",
+        "n": 20
+      },
+      {
+        "source": "clustering_v2",
+        "status": "confirmed",
+        "n": 1
+      }
+    ],
+    "unknown_character_ids": [
+      20
+    ],
+    "unknown_tracklet_count": 1431,
+    "named_assignment_rows": 460
+  }
+}

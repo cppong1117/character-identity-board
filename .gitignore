@@ -1,0 +1,6 @@
+
+# V0.3 alignment debug images (local only; keep index.json)
+reports/v03_recovery/alignment_debug/raw/
+reports/v03_recovery/alignment_debug/aligned/
+reports/v03_recovery/alignment_debug/compare/
+reports/v03_recovery/alignment_debug/landmarks/
