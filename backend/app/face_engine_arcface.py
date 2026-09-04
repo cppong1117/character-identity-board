@@ -12,6 +12,7 @@ embedding_version:
 """
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any, Optional
 
@@ -91,13 +92,40 @@ class FaceEngineArcFace:
         if self.arcface_session is not None:
             return
 
+        # WSL/venv: ensure pip-nvidia CUDA/cuDNN libs are on the loader path
+        # before ORT tries CUDAExecutionProvider (otherwise it silently falls back).
+        try:
+            import site
+            from pathlib import Path as _P
+
+            libs = []
+            for sp in site.getsitepackages() + [site.getusersitepackages()]:
+                base = _P(sp) / "nvidia"
+                if base.is_dir():
+                    for d in base.glob("*/lib"):
+                        libs.append(str(d))
+            wsl = "/usr/lib/wsl/lib"
+            if _P(wsl).is_dir():
+                libs.append(wsl)
+            if libs:
+                cur = os.environ.get("LD_LIBRARY_PATH", "")
+                merged = ":".join(libs + ([cur] if cur else []))
+                os.environ["LD_LIBRARY_PATH"] = merged
+        except Exception:
+            pass
+
         import onnxruntime as ort
 
         model_path = self.arcface_dir / "w600k_r50.onnx"
         if not model_path.exists():
             raise FileNotFoundError(f"ArcFace model missing at {model_path}")
 
-        providers = ["CUDAExecutionProvider", "CPUExecutionProvider"]
+        force_cpu = os.environ.get("CIB_FORCE_CPU", "").strip() in ("1", "true", "yes")
+        providers = (
+            ["CPUExecutionProvider"]
+            if force_cpu
+            else ["CUDAExecutionProvider", "CPUExecutionProvider"]
+        )
         available = ort.get_available_providers()
         self.arcface_session = ort.InferenceSession(
             str(model_path),

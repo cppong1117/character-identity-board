@@ -69,32 +69,47 @@ def b64_to_blob(s: str) -> bytes:
     return base64.b64decode(s.encode("ascii"))
 
 
+def _prep_cuda_libs() -> None:
+    """Put pip nvidia + WSL libcuda on LD_LIBRARY_PATH for ORT CUDA EP."""
+    try:
+        import site
+        from pathlib import Path as _P
+
+        libs = []
+        for sp in site.getsitepackages() + [site.getusersitepackages()]:
+            base = _P(sp) / "nvidia"
+            if base.is_dir():
+                for d in base.glob("*/lib"):
+                    libs.append(str(d))
+        if _P("/usr/lib/wsl/lib").is_dir():
+            libs.append("/usr/lib/wsl/lib")
+        if libs:
+            cur = os.environ.get("LD_LIBRARY_PATH", "")
+            os.environ["LD_LIBRARY_PATH"] = ":".join(libs + ([cur] if cur else []))
+    except Exception:
+        pass
+
+
 def worker_shard(payload: tuple) -> dict:
     """Process a list of (id, path) and write one jsonl shard. No DB writes."""
-    shard_id, items = payload
-    # Force CPU EP only inside worker to skip CUDA probe spam
-    os.environ["ORT_DISABLE_CUDA"] = "1"
-    os.environ["CUDA_VISIBLE_DEVICES"] = ""
+    shard_id, items, use_gpu = payload if len(payload) == 3 else (*payload, False)
 
     sys.path.insert(0, str(ROOT))
-    # Patch providers before import side effects
-    import onnxruntime as ort
-
-    _orig = ort.InferenceSession
-
-    class _CPUSession(_orig):  # type: ignore
-        def __init__(self, *a, **k):
-            k = dict(k)
-            k["providers"] = ["CPUExecutionProvider"]
-            super().__init__(*a, **k)
-
-    ort.InferenceSession = _CPUSession  # type: ignore
+    if use_gpu:
+        _prep_cuda_libs()
+        os.environ.pop("CIB_FORCE_CPU", None)
+        os.environ.pop("CUDA_VISIBLE_DEVICES", None)
+    else:
+        # CPU-only worker path
+        os.environ["CIB_FORCE_CPU"] = "1"
+        os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
     from backend.app.face_engine_arcface import FaceEngineArcFace
 
     engine = FaceEngineArcFace()
-    # force arcface init on CPU
     engine._init_arcface()
+    prov = engine.arcface_session.get_providers() if engine.arcface_session else []
+    print(f"worker shard={shard_id} gpu={use_gpu} providers={prov}", flush=True)
 
     shard_path = SHARD_DIR / f"shard_{shard_id:05d}.jsonl"
     ok = fail = aligned = fallback = 0
@@ -217,9 +232,19 @@ def main() -> int:
     ap.add_argument("--chunk-size", type=int, default=250)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--apply-only", action="store_true", help="Only apply existing shards")
+    ap.add_argument(
+        "--gpu",
+        action="store_true",
+        help="Use ORT CUDA EP in workers (prefer 1-2 workers; needs LD_LIBRARY_PATH nvidia libs)",
+    )
     args = ap.parse_args()
 
     ensure_schema(args.db)
+    if args.gpu:
+        _prep_cuda_libs()
+        # GPU: fewer workers avoid VRAM thrash; default down if user left 8
+        if args.workers > 2 and "--workers" not in sys.argv:
+            args.workers = 2
 
     if not args.apply_only:
         conn = sqlite3.connect(args.db, timeout=120)
@@ -241,10 +266,23 @@ def main() -> int:
         if args.limit > 0:
             items = items[: args.limit]
         total = len(items)
-        print(f"to_process={total} workers={args.workers} chunk={args.chunk_size}", flush=True)
+        print(
+            f"to_process={total} workers={args.workers} chunk={args.chunk_size} gpu={args.gpu}",
+            flush=True,
+        )
         if total == 0:
             print("nothing to embed", flush=True)
         else:
+            # fresh shard dir for this run (old shards already applied; keep backups)
+            run_tag = time.strftime("%Y%m%d_%H%M%S")
+            # keep existing shards; use new sequential ids starting after max
+            existing = list(SHARD_DIR.glob("shard_*.jsonl"))
+            start_id = 0
+            if existing:
+                try:
+                    start_id = max(int(p.stem.split("_")[1]) for p in existing) + 1
+                except Exception:
+                    start_id = len(existing)
             chunks = [
                 items[i : i + args.chunk_size] for i in range(0, total, args.chunk_size)
             ]
@@ -252,10 +290,24 @@ def main() -> int:
             done = ok = fail = aligned = fallback = 0
             shard_paths: list[str] = []
             progress_path = OUT / "reembed_v2_progress.json"
+            progress_path.write_text(
+                json.dumps(
+                    {
+                        "phase": "starting",
+                        "gpu": args.gpu,
+                        "total": total,
+                        "workers": args.workers,
+                        "run_tag": run_tag,
+                    },
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
 
             with ProcessPoolExecutor(max_workers=args.workers) as ex:
                 futs = {
-                    ex.submit(worker_shard, (i, ch)): i for i, ch in enumerate(chunks)
+                    ex.submit(worker_shard, (start_id + i, ch, bool(args.gpu))): i
+                    for i, ch in enumerate(chunks)
                 }
                 for fut in as_completed(futs):
                     r = fut.result()
@@ -270,6 +322,7 @@ def main() -> int:
                     eta = (total - done) / max(rate, 1e-6)
                     prog = {
                         "phase": "embed_shards",
+                        "gpu": bool(args.gpu),
                         "done": done,
                         "total": total,
                         "ok": ok,
