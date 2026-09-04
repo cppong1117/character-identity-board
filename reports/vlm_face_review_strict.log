@@ -1,0 +1,40 @@
+=== VLM Face Review (Strict) ===
+Model: mage-vl | Workers: 10 | Batch: 50
+Review queue: 1498 items
+Valid crops: 1498
+Batch 1/30... faces=50 not_faces=0
+Batch 2/30... faces=100 not_faces=0
+Batch 3/30... faces=150 not_faces=0
+Batch 4/30... faces=200 not_faces=0
+Batch 5/30... faces=250 not_faces=0
+Batch 6/30... faces=300 not_faces=0
+Batch 7/30... faces=350 not_faces=0
+Batch 8/30... faces=400 not_faces=0
+Batch 9/30... faces=450 not_faces=0
+Batch 10/30... faces=500 not_faces=0
+Batch 11/30... faces=550 not_faces=0
+Batch 12/30... faces=600 not_faces=0
+Batch 13/30... faces=650 not_faces=0
+Batch 14/30... faces=700 not_faces=0
+Batch 15/30... faces=750 not_faces=0
+Batch 16/30... faces=800 not_faces=0
+Batch 17/30... faces=850 not_faces=0
+Batch 18/30... faces=900 not_faces=0
+Batch 19/30... faces=950 not_faces=0
+Batch 20/30... faces=1000 not_faces=0
+Batch 21/30... faces=1050 not_faces=0
+Batch 22/30... faces=1100 not_faces=0
+Batch 23/30... faces=1150 not_faces=0
+Batch 24/30... faces=1200 not_faces=0
+Batch 25/30... faces=1250 not_faces=0
+Batch 26/30... faces=1300 not_faces=0
+Batch 27/30... faces=1350 not_faces=0
+Batch 28/30... faces=1400 not_faces=0
+Batch 29/30... faces=1450 not_faces=0
+Batch 30/30... faces=1498 not_faces=0
+
+=== DONE ===
+Faces: 1498
+Not faces: 0
+Time: 10s (155.8/s)
+Report: /home/ponky_re6000/character-identity-board/reports/vlm_face_review.json

@@ -1,0 +1,22 @@
+=== Vision LLM Face Verification ===
+API: http://127.0.0.1:8011/v1
+Model: mage-vl
+Project: 15
+
+Testing Vision LLM connection...
+Available models: ['mage-vl']
+
+Fetching review queue...
+Found 1498 review items
+
+Resolving crop paths...
+Found 1498 items with valid crop paths
+
+Processing 1498 images with Vision LLM...
+Batch size: 20, Workers: 5
+
+Batch 1/75 (20 items)... faces=18, not_faces=2
+Batch 2/75 (20 items)... faces=20, not_faces=0
+Batch 3/75 (20 items)... faces=20, not_faces=0
+Batch 4/75 (20 items)... faces=20, not_faces=0
+Batch 5/75 (20 items)... 

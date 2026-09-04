@@ -1,0 +1,12 @@
+=== Fast Non-Face Detection ===
+Review queue: 1498 items
+Definite non-face (< 4000B): 106
+Borderline (4000-12000B): 393
+Likely face (> 12000B): 999
+
+--- Excluding 106 definite non-faces ---
+✓ Excluded 106/106
+
+--- Checking 393 borderline items with Vision LLM ---
+  Progress: 0/393 (non-face: 0, errors: 0)
+  Progress: 10/393 (non-face: 5, errors: 4)

@@ -1,0 +1,39 @@
+Review queue: 1498 items
+Valid crops: 1498
+Processing with 5 workers (expect ~150 min)...
+
+Batch 1/30... faces=20 not=20 err=10 elapsed=387s eta=11218s
+Batch 2/30... faces=38 not=33 err=29 elapsed=852s eta=11916s
+Batch 3/30... faces=45 not=38 err=67 elapsed=1394s eta=12526s
+Batch 4/30... faces=50 not=83 err=67 elapsed=1683s eta=10925s
+Batch 5/30... faces=78 not=105 err=67 elapsed=2058s eta=10275s
+Batch 6/30... faces=87 not=106 err=107 elapsed=2642s eta=10551s
+Batch 7/30... faces=87 not=106 err=157 elapsed=3269s eta=10723s
+Batch 8/30... faces=87 not=106 err=207 elapsed=3894s eta=10689s
+Batch 9/30... faces=87 not=106 err=257 elapsed=4519s eta=10524s
+Batch 10/30... faces=87 not=106 err=307 elapsed=5133s eta=10245s
+Batch 11/30... faces=87 not=106 err=357 elapsed=5744s eta=9901s
+Batch 12/30... faces=87 not=106 err=407 elapsed=6359s eta=9518s
+Batch 13/30... faces=87 not=106 err=457 elapsed=6984s eta=9111s
+Batch 14/30... faces=87 not=106 err=507 elapsed=7601s eta=8666s
+Batch 15/30... faces=87 not=106 err=557 elapsed=8234s eta=8212s
+Batch 16/30... faces=87 not=106 err=607 elapsed=8847s eta=7719s
+Batch 17/30... faces=87 not=106 err=657 elapsed=9468s eta=7218s
+Batch 18/30... faces=87 not=106 err=707 elapsed=10086s eta=6701s
+Batch 19/30... faces=87 not=106 err=757 elapsed=10699s eta=6172s
+Batch 20/30... faces=87 not=106 err=807 elapsed=11320s eta=5637s
+Batch 21/30... faces=87 not=106 err=857 elapsed=11960s eta=5103s
+Batch 22/30... faces=87 not=106 err=907 elapsed=12575s eta=4550s
+Batch 23/30... faces=87 not=106 err=957 elapsed=13207s eta=3997s
+Batch 24/30... faces=87 not=106 err=1007 elapsed=13842s eta=3438s
+Batch 25/30... faces=87 not=106 err=1057 elapsed=14477s eta=2872s
+Batch 26/30... faces=87 not=106 err=1107 elapsed=15093s eta=2299s
+Batch 27/30... faces=87 not=106 err=1157 elapsed=15707s eta=1722s
+Batch 28/30... faces=87 not=106 err=1207 elapsed=16315s eta=1142s
+Batch 29/30... faces=87 not=106 err=1257 elapsed=16926s eta=560s
+Batch 30/30... faces=87 not=106 err=1305 elapsed=17541s eta=0s
+
+=== DONE ===
+Faces: 87, Not-faces: 106, Errors: 1305
+Time: 17542s
+Report saved

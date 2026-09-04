@@ -1,0 +1,16 @@
+Total active observations: 114206
+Definite non-face: 3161 (auto-exclude)
+Borderline: 21669 (check with Vision LLM)
+Likely face: 89376 (skip)
+
+Auto-excluded: 3161/3161
+
+Checking 21669 borderline with Vision LLM...
+  [10/21669] face=0 not=10 err=0 eta=1748min
+  [20/21669] face=0 not=20 err=0 eta=1860min
+  [30/21669] face=0 not=30 err=0 eta=1907min
+  [40/21669] face=0 not=40 err=0 eta=1932min
+  [50/21669] face=0 not=50 err=0 eta=1928min
+  [60/21669] face=0 not=60 err=0 eta=1981min
+  [70/21669] face=0 not=70 err=0 eta=2025min
+  [80/21669] face=0 not=80 err=0 eta=2011min

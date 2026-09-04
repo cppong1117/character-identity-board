@@ -1,0 +1,46 @@
+=== Vision LLM Face Verification (Fast) ===
+Vision API: http://127.0.0.1:8011/v1
+Model: mage-vl
+Resize: 128x128
+
+Fetching review queue...
+Found 1498 items
+Valid crops: 1498
+
+Processing with 10 workers, batch size 50...
+Batch 1/30 (50)... running: 50 faces, 0 not-faces
+Batch 2/30 (50)... running: 100 faces, 0 not-faces
+Batch 3/30 (50)... running: 150 faces, 0 not-faces
+Batch 4/30 (50)... running: 200 faces, 0 not-faces
+Batch 5/30 (50)... running: 250 faces, 0 not-faces
+Batch 6/30 (50)... running: 300 faces, 0 not-faces
+Batch 7/30 (50)... running: 350 faces, 0 not-faces
+Batch 8/30 (50)... running: 400 faces, 0 not-faces
+Batch 9/30 (50)... running: 450 faces, 0 not-faces
+Batch 10/30 (50)... running: 500 faces, 0 not-faces
+Batch 11/30 (50)... running: 550 faces, 0 not-faces
+Batch 12/30 (50)... running: 600 faces, 0 not-faces
+Batch 13/30 (50)... running: 650 faces, 0 not-faces
+Batch 14/30 (50)... running: 700 faces, 0 not-faces
+Batch 15/30 (50)... running: 750 faces, 0 not-faces
+Batch 16/30 (50)... running: 800 faces, 0 not-faces
+Batch 17/30 (50)... running: 850 faces, 0 not-faces
+Batch 18/30 (50)... running: 900 faces, 0 not-faces
+Batch 19/30 (50)... running: 950 faces, 0 not-faces
+Batch 20/30 (50)... running: 1000 faces, 0 not-faces
+Batch 21/30 (50)... running: 1050 faces, 0 not-faces
+Batch 22/30 (50)... running: 1100 faces, 0 not-faces
+Batch 23/30 (50)... running: 1150 faces, 0 not-faces
+Batch 24/30 (50)... running: 1200 faces, 0 not-faces
+Batch 25/30 (50)... running: 1250 faces, 0 not-faces
+Batch 26/30 (50)... running: 1300 faces, 0 not-faces
+Batch 27/30 (50)... running: 1350 faces, 0 not-faces
+Batch 28/30 (50)... running: 1400 faces, 0 not-faces
+Batch 29/30 (50)... running: 1450 faces, 0 not-faces
+Batch 30/30 (48)... running: 1498 faces, 0 not-faces
+
+=== Results ===
+Faces: 1498
+Not faces: 0
+Time: 2378.3s (0.6 items/s)
+Report: /home/ponky_re6000/character-identity-board/reports/vlm_face_review.json

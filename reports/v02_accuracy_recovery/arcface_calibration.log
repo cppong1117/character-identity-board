@@ -1,0 +1,33 @@
+Loading ArcFace embeddings...
+Loaded 57680 embeddings from 12 characters
+
+Characters:
+  SMY: 25685 faces
+  DOCTOR: 13149 faces
+  lw: 8111 faces
+  mbq: 4455 faces
+  ZY: 4301 faces
+  Person A_Test: 600 faces
+  Character A: 300 faces
+  Character A: 300 faces
+  Cluster 01: 300 faces
+  Cluster 02: 300 faces
+
+Generating pairs...
+Same-person pairs: 1667500
+Different-person pairs: 3800
+
+Computing similarities...
+
+Same-person: mean=0.6565, median=0.7998
+Different-person: mean=0.2204, median=0.0881
+Separation: 0.4361
+
+=== OPTIMAL THRESHOLDS ===
+Best F1: 0.9577 @ threshold=0.10
+  Precision: 0.9990
+  Recall: 0.9197
+  FAR: 0.397105
+  FRR: 0.080320
+
+Results saved to /home/ponky_re6000/character-identity-board/reports/v02_accuracy_recovery/arcface_threshold_calibration.json

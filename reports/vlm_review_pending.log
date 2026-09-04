@@ -1,0 +1,20 @@
+Pending review queue: 60 items
+Valid crops: 60
+Processing with 3 workers...
+[5/60] faces=1 not=4 err=0 elapsed=11s eta=122s
+[10/60] faces=2 not=8 err=0 elapsed=19s eta=95s
+[15/60] faces=3 not=12 err=0 elapsed=28s eta=84s
+[20/60] faces=5 not=15 err=0 elapsed=34s eta=69s
+[25/60] faces=5 not=20 err=0 elapsed=48s eta=67s
+[30/60] faces=5 not=25 err=0 elapsed=55s eta=55s
+[35/60] faces=9 not=26 err=0 elapsed=65s eta=47s
+[40/60] faces=14 not=26 err=0 elapsed=80s eta=40s
+[45/60] faces=15 not=30 err=0 elapsed=86s eta=29s
+[50/60] faces=16 not=34 err=0 elapsed=96s eta=19s
+[55/60] faces=16 not=39 err=0 elapsed=102s eta=9s
+[60/60] faces=21 not=39 err=0 elapsed=116s eta=0s
+
+=== DONE ===
+Faces: 21, Not-faces: 39, Errors: 0
+Time: 116s
+Report saved
