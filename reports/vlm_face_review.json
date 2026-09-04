@@ -1,0 +1,204 @@
+{
+  "faces": 21,
+  "not_faces": 39,
+  "errors": 0,
+  "excluded": [
+    {
+      "tracklet_id": 455,
+      "shot": 289,
+      "reason": "blurry mess"
+    },
+    {
+      "tracklet_id": 1382,
+      "shot": 732,
+      "reason": "the image shows a blurry mess and not a recognizable face"
+    },
+    {
+      "tracklet_id": 1448,
+      "shot": 777,
+      "reason": "The image shows a blurry mess with no recognizable facial features."
+    },
+    {
+      "tracklet_id": 1452,
+      "shot": 778,
+      "reason": "the image is a blurry mess and does not show a recognizable face"
+    },
+    {
+      "tracklet_id": 1453,
+      "shot": 778,
+      "reason": "the image is a blurry mess and does not show a recognizable face"
+    },
+    {
+      "tracklet_id": 1457,
+      "shot": 780,
+      "reason": "the image shows a fire and not a face"
+    },
+    {
+      "tracklet_id": 1466,
+      "shot": 781,
+      "reason": "blurry mess"
+    },
+    {
+      "tracklet_id": 1468,
+      "shot": 782,
+      "reason": "blurry mess"
+    },
+    {
+      "tracklet_id": 1470,
+      "shot": 782,
+      "reason": "The image is a blurry mess and does not show any recognizable facial features."
+    },
+    {
+      "tracklet_id": 1472,
+      "shot": 782,
+      "reason": "only clothing and fire visible"
+    },
+    {
+      "tracklet_id": 1473,
+      "shot": 782,
+      "reason": "The image is a blurry mess and does not show any recognizable facial features."
+    },
+    {
+      "tracklet_id": 1476,
+      "shot": 784,
+      "reason": "The image shows a lightning bolt, not a human face."
+    },
+    {
+      "tracklet_id": 1477,
+      "shot": 784,
+      "reason": "The image is a blurry mess and does not show any recognizable facial features."
+    },
+    {
+      "tracklet_id": 1481,
+      "shot": 786,
+      "reason": "the image is blurry and does not show a recognizable face"
+    },
+    {
+      "tracklet_id": 1482,
+      "shot": 786,
+      "reason": "the image is blurry and does not show a recognizable face"
+    },
+    {
+      "tracklet_id": 2025,
+      "shot": 1050,
+      "reason": "only body parts visible"
+    },
+    {
+      "tracklet_id": 2027,
+      "shot": 1052,
+      "reason": "The image shows a hand and clothing, not a recognizable face."
+    },
+    {
+      "tracklet_id": 2028,
+      "shot": 1052,
+      "reason": "only a hand is visible"
+    },
+    {
+      "tracklet_id": 2029,
+      "shot": 1052,
+      "reason": "The image shows a hand and clothing, not a recognizable face."
+    },
+    {
+      "tracklet_id": 2030,
+      "shot": 1052,
+      "reason": "the image shows a hand and clothing, not a recognizable face"
+    },
+    {
+      "tracklet_id": 2032,
+      "shot": 1054,
+      "reason": "the image shows a bowl of food, not a face"
+    },
+    {
+      "tracklet_id": 2033,
+      "shot": 1054,
+      "reason": "only ear visible"
+    },
+    {
+      "tracklet_id": 2034,
+      "shot": 1054,
+      "reason": "the image shows a bowl of food, not a face"
+    },
+    {
+      "tracklet_id": 2035,
+      "shot": 1054,
+      "reason": "the image shows a bowl of food, not a face"
+    },
+    {
+      "tracklet_id": 2036,
+      "shot": 1054,
+      "reason": "only body part visible"
+    },
+    {
+      "tracklet_id": 2037,
+      "shot": 1054,
+      "reason": "only a hand is visible"
+    },
+    {
+      "tracklet_id": 2070,
+      "shot": 1063,
+      "reason": "only hand and clothing visible"
+    },
+    {
+      "tracklet_id": 2071,
+      "shot": 1063,
+      "reason": "only hand and clothing visible"
+    },
+    {
+      "tracklet_id": 2073,
+      "shot": 1063,
+      "reason": "only hand visible"
+    },
+    {
+      "tracklet_id": 2074,
+      "shot": 1063,
+      "reason": "only hand and clothing visible"
+    },
+    {
+      "tracklet_id": 2078,
+      "shot": 1066,
+      "reason": "The image is blurry and does not show a recognizable face."
+    },
+    {
+      "tracklet_id": 2079,
+      "shot": 1066,
+      "reason": "The image is blurry and does not show a recognizable face."
+    },
+    {
+      "tracklet_id": 2080,
+      "shot": 1066,
+      "reason": "The image shows a blurry mess and not a recognizable face."
+    },
+    {
+      "tracklet_id": 2081,
+      "shot": 1066,
+      "reason": "The image is blurry and does not show a recognizable face."
+    },
+    {
+      "tracklet_id": 2082,
+      "shot": 1067,
+      "reason": "only clothing and background visible"
+    },
+    {
+      "tracklet_id": 2083,
+      "shot": 1067,
+      "reason": "the image is blurry and does not show a recognizable face"
+    },
+    {
+      "tracklet_id": 2084,
+      "shot": 1067,
+      "reason": "only clothing visible"
+    },
+    {
+      "tracklet_id": 2085,
+      "shot": 1068,
+      "reason": "the image shows a blurry mess"
+    },
+    {
+      "tracklet_id": 2086,
+      "shot": 1068,
+      "reason": "the image shows a blurry mess"
+    }
+  ],
+  "elapsed": 116.10813236236572,
+  "total_pending": 60
+}
