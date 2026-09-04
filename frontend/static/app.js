@@ -12,16 +12,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const procView = document.getElementById('view-processing');
     if (procView && procView.classList.contains('active')) refreshProcessing();
   }, 8000);
-});
 
-  // Add hover CSS for face exclude buttons
+  // Face select / exclude styles
   const style = document.createElement('style');
   style.textContent = `
+    .char-face-wrap { position: relative; flex-shrink: 0; }
     .char-face-wrap:hover .char-face-x { opacity: 1 !important; }
-    .char-face-wrap:hover .char-face-img { border-color: #ef4444 !important; }
-    .char-face-img.selected { border-color: #22c55e !important; box-shadow: 0 0 8px rgba(34,197,94,0.4); }
+    .char-face-img { width: 72px; height: 72px; object-fit: cover; border-radius: 8px; border: 2px solid var(--border); cursor: pointer; display:block; }
+    .char-face-img.selected { border-color: #22c55e !important; box-shadow: 0 0 0 2px rgba(34,197,94,0.35); }
+    .char-face-x { position:absolute; top:-6px; right:-6px; width:20px; height:20px; background:#ef4444; color:#fff; border-radius:50%; font-size:11px; display:flex; align-items:center; justify-content:center; cursor:pointer; opacity:0; transition:opacity .15s; z-index:2; border:none; }
+    .char-face-check { position:absolute; left:4px; top:4px; width:16px; height:16px; border-radius:3px; border:1px solid rgba(255,255,255,.8); background:rgba(0,0,0,.35); pointer-events:none; }
+    .char-face-img.selected + .char-face-x + .char-face-check,
+    .char-face-wrap .char-face-img.selected ~ .char-face-check { background:#22c55e; border-color:#22c55e; }
+    .char-face-meta { font-size:10px; color:var(--text-muted); text-align:center; margin-top:2px; max-width:72px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   `;
   document.head.appendChild(style);
+});
 
 
 // ─── API Helpers ────────────────────────────────────────
@@ -177,7 +183,7 @@ async function loadCharacters(projectId) {
   try {
     const chars = await api(`/projects/${projectId}/characters`);
     const clusters = chars.filter(c => c.character_code !== 'UNKNOWN');
-    
+
     if (!clusters.length) {
       container.innerHTML = `<div class="empty-state"><div class="empty-state-text">No characters detected yet</div></div>`;
       return;
@@ -187,40 +193,45 @@ async function loadCharacters(projectId) {
     for (const c of clusters) {
       let faces = [];
       try {
-        const obs = await api(`/characters/${c.id}/observations?limit=6`);
-        faces = obs.filter(o => o.face_crop_path).slice(0, 6);
-      } catch(e) {}
+        // Show more faces so cleanup is possible (was hard-capped at 6)
+        const obs = await api(`/characters/${c.id}/observations?limit=48`);
+        faces = (obs || []).filter(o => o.face_crop_path && o.id && !o.excluded);
+      } catch (e) {}
 
       const statusBadge = c.status === 'manual' ? '<span style="font-size:10px;background:rgba(34,197,94,0.15);color:#22c55e;padding:2px 8px;border-radius:10px;margin-left:8px">MANUAL</span>' :
                           c.status === 'unknown' ? '<span style="font-size:10px;background:rgba(255,255,255,0.1);color:#888;padding:2px 8px;border-radius:10px;margin-left:8px">UNKNOWN</span>' :
                           '';
 
-      const facesHtml = faces.length ? `<div style="display:flex;gap:6px;overflow-x:auto;padding:4px 0">${faces.map(o => {
+      const facesHtml = faces.length ? `<div class="char-face-grid" style="display:flex;gap:8px;overflow-x:auto;padding:6px 0;flex-wrap:wrap">${faces.map(o => {
         const url = '/media/' + o.face_crop_path.replace(/^.*?character-identity-board-data\/projects\//, '');
-        return `<div style="position:relative;flex-shrink:0" class="char-face-wrap">
-          <img src="${url}" class="char-face-img" data-obs="${o.id}"
-            style="width:56px;height:56px;object-fit:cover;border-radius:8px;border:2px solid var(--border);cursor:pointer"
-            title="Shot #${o.shot_number} q=${(o.quality_score||0).toFixed(2)} — click to exclude"
-            onclick="excludeObservation(${o.id}, this)" onerror="this.style.display='none'">
-          <div style="position:absolute;top:-4px;right:-4px;width:18px;height:18px;background:#ef4444;color:white;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity 0.2s"
-            class="char-face-x" onclick="event.stopPropagation();excludeObservation(${o.id}, this.parentElement.querySelector('img'))">✕</div>
+        const conf = (o.identity_confidence != null) ? Number(o.identity_confidence).toFixed(2) : '-';
+        const qs = (o.quality_score != null) ? Number(o.quality_score).toFixed(2) : '-';
+        return `<div class="char-face-wrap" data-obs="${o.id}" data-char="${c.id}" data-tracklet="${o.tracklet_id}">
+          <img src="${url}" class="char-face-img" data-obs="${o.id}" data-char="${c.id}" data-tracklet="${o.tracklet_id}"
+            title="Shot #${o.shot_number} · q=${qs} · conf=${conf} — click to select"
+            onclick="toggleOneFace(event, this)" onerror="this.parentElement.style.display='none'">
+          <button type="button" class="char-face-x" title="排除这张脸" onclick="event.stopPropagation();excludeObservation(${o.id}, this.parentElement.querySelector('img'))">✕</button>
+          <div class="char-face-check"></div>
+          <div class="char-face-meta">#${o.shot_number}</div>
         </div>`;
-      }).join('')}</div>` : '';
+      }).join('')}</div>` : '<div style="font-size:12px;color:var(--text-muted)">No face crops</div>';
 
       const pendingHtml = c.pending_review > 0 ? `<div style="font-size:12px;color:var(--yellow)">⚠ ${c.pending_review} pending review</div>` : '';
-      
-      const batchBar = `<div style="display:flex;gap:6px;margin-top:8px;align-items:center">
-        <button onclick="toggleFaceSelect(${c.id})" style="background:var(--card);color:var(--foreground);border:1px solid var(--border);padding:4px 10px;border-radius:4px;cursor:pointer;font-size:11px">☐ 选择</button>
-        <button onclick="batchExcludeFaces(${c.id})" style="background:#ef4444;color:white;border:none;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:11px">✗ 排除选中</button>
+
+      const batchBar = `<div style="display:flex;gap:6px;margin-top:8px;align-items:center;flex-wrap:wrap">
+        <button type="button" onclick="toggleFaceSelect(${c.id})" style="background:var(--card);color:var(--foreground);border:1px solid var(--border);padding:4px 10px;border-radius:4px;cursor:pointer;font-size:11px">☐ 全选/取消</button>
+        <button type="button" onclick="batchExcludeFaces(${c.id})" style="background:#ef4444;color:white;border:none;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:11px">✗ 排除选中</button>
+        <button type="button" onclick="batchUnknownFaces(${c.id})" style="background:#f59e0b;color:white;border:none;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:11px">? 移到 Unknown</button>
+        <span style="font-size:11px;color:var(--text-muted)">显示 ${faces.length} 张 · 点图选择，点 ✕ 单张排除</span>
       </div>`;
 
       html += `
-        <div class="character-card" style="flex-direction:column;align-items:stretch;gap:12px">
+        <div class="character-card" data-char-card="${c.id}" style="flex-direction:column;align-items:stretch;gap:12px">
           <div style="display:flex;align-items:center;gap:12px">
             <div class="character-avatar" style="width:48px;height:48px;font-size:18px">${esc(c.display_name.charAt(0))}</div>
             <div style="flex:1">
               <div style="display:flex;align-items:center;gap:8px">
-                <input type="text" id="cname${c.id}" value="${esc(c.display_name)}" 
+                <input type="text" id="cname${c.id}" value="${esc(c.display_name)}"
                   style="background:transparent;border:none;border-bottom:2px solid var(--border);color:var(--foreground);font-size:16px;font-weight:600;width:180px;padding:2px 0;outline:none" />
                 ${statusBadge}
               </div>
@@ -236,7 +247,7 @@ async function loadCharacters(projectId) {
           ${pendingHtml}
         </div>`;
     }
-    
+
     container.innerHTML = html;
     document.getElementById('detail-review').textContent = chars.reduce((sum, c) => sum + (c.pending_review || 0), 0);
   } catch (e) {
@@ -543,68 +554,106 @@ async function excludeNotFace(trackletId) {
   }
 }
 
-// ─── Exclude single observation from character ─────────
-async function excludeObservation(obsId, imgEl) {
-  try {
-    // Fade out immediately
-    const wrap = imgEl.closest('.char-face-wrap') || imgEl.parentElement;
-    wrap.style.transition = 'opacity 0.3s, transform 0.3s';
+// ─── Character face select / exclude ───────────────────
+function toggleOneFace(ev, imgEl) {
+  if (ev) ev.preventDefault();
+  imgEl.classList.toggle('selected');
+}
+
+function getSelectedFaceImgs(charId) {
+  return [...document.querySelectorAll(`.char-face-img[data-char="${charId}"].selected`)];
+}
+
+function removeFaceWrapByObs(obsId) {
+  document.querySelectorAll(`.char-face-wrap[data-obs="${obsId}"]`).forEach(wrap => {
+    wrap.style.transition = 'opacity 0.2s, transform 0.2s';
     wrap.style.opacity = '0';
-    wrap.style.transform = 'scale(0.8)';
-    
+    wrap.style.transform = 'scale(0.85)';
+    setTimeout(() => wrap.remove(), 200);
+  });
+}
+
+async function excludeObservation(obsId, imgEl) {
+  if (!obsId || obsId === 'undefined' || Number.isNaN(Number(obsId))) {
+    toast('无法排除：缺少 observation id', 'error');
+    return;
+  }
+  const wrap = imgEl ? (imgEl.closest('.char-face-wrap') || imgEl.parentElement) : null;
+  try {
+    if (wrap) {
+      wrap.style.transition = 'opacity 0.2s, transform 0.2s';
+      wrap.style.opacity = '0.4';
+    }
     await api(`/observations/${obsId}/exclude`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ excluded: true, reason: 'excluded by user (click)' })
     });
-    
     toast('✓ 已排除这张脸', 'success');
-    setTimeout(() => wrap.remove(), 300);
+    removeFaceWrapByObs(obsId);
   } catch (e) {
     toast('Failed: ' + e.message, 'error');
-    // Restore on error
-    if (imgEl) { imgEl.style.opacity = '1'; }
+    if (wrap) wrap.style.opacity = '1';
   }
 }
 
-// ─── Batch exclude observations from character ─────────
 async function batchExcludeFaces(charId) {
-  const checked = document.querySelectorAll(`.char-face-img[data-char="${charId}"].selected`);
-  if (!checked.length) { toast('请先选择要排除的脸', 'error'); return; }
-  
-  const obsIds = [...checked].map(img => img.dataset.obs);
-  toast(`正在排除 ${obsIds.length} 张脸...`, 'info');
-  
-  const results = await Promise.allSettled(obsIds.map(id =>
-    api(`/observations/${id}/exclude`, {
+  const checked = getSelectedFaceImgs(charId);
+  if (!checked.length) { toast('请先点选要排除的脸（绿色边框）', 'error'); return; }
+
+  const items = checked.map(img => ({
+    obsId: img.dataset.obs,
+    trackletId: img.dataset.tracklet,
+  })).filter(x => x.obsId);
+
+  toast(`正在排除 ${items.length} 张脸...`, 'info');
+
+  const results = await Promise.allSettled(items.map(it =>
+    api(`/observations/${it.obsId}/exclude`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ excluded: true, reason: 'batch excluded by user' })
     })
   ));
-  
-  const ok = results.filter(r => r.status === 'fulfilled').length;
-  toast(`✓ 已排除 ${ok}/${obsIds.length} 张脸`, 'success');
-  
-  // Remove from UI
-  checked.forEach(img => {
-    const wrap = img.closest('.char-face-wrap');
-    if (wrap) {
-      wrap.style.transition = 'opacity 0.3s';
-      wrap.style.opacity = '0';
-      setTimeout(() => wrap.remove(), 300);
+
+  let ok = 0;
+  results.forEach((r, idx) => {
+    if (r.status === 'fulfilled') {
+      ok += 1;
+      removeFaceWrapByObs(items[idx].obsId);
     }
   });
-  
-  if (currentProject) loadCharacters(currentProject.id);
+  toast(`✓ 已排除 ${ok}/${items.length} 张脸`, ok ? 'success' : 'error');
+}
+
+async function batchUnknownFaces(charId) {
+  const checked = getSelectedFaceImgs(charId);
+  if (!checked.length) { toast('请先点选要移动的脸', 'error'); return; }
+
+  const trackletIds = [...new Set(checked.map(img => img.dataset.tracklet).filter(Boolean))];
+  toast(`正在移到 Unknown：${trackletIds.length} 个 tracklet...`, 'info');
+
+  const results = await Promise.allSettled(trackletIds.map(tid =>
+    api(`/tracklets/${tid}/assignment`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ character_id: 0, note: 'Moved to Unknown by batch UI' })
+    })
+  ));
+
+  const ok = results.filter(r => r.status === 'fulfilled').length;
+  toast(`✓ 已移动 ${ok}/${trackletIds.length}`, ok ? 'success' : 'error');
+
+  // Remove selected wraps locally without full reload
+  checked.forEach(img => removeFaceWrapByObs(img.dataset.obs));
 }
 
 function toggleFaceSelect(charId) {
-  const imgs = document.querySelectorAll(`.char-face-img[data-char="${charId}"]`);
-  const allSelected = [...imgs].every(img => img.classList.contains('selected'));
+  const imgs = [...document.querySelectorAll(`.char-face-img[data-char="${charId}"]`)];
+  if (!imgs.length) return;
+  const allSelected = imgs.every(img => img.classList.contains('selected'));
   imgs.forEach(img => {
     img.classList.toggle('selected', !allSelected);
-    img.style.border = !allSelected ? '2px solid #22c55e' : '2px solid var(--border)';
   });
 }
 
